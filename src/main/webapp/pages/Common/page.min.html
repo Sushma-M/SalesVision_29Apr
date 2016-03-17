@@ -1,0 +1,64 @@
+<style id="Common.css">
+
+</style>
+<script id="Common.js">
+Application.$controller("CommonPageController", ['$scope',
+    function($scope) {
+        "use strict";
+
+        /* perform any action with the variables inside this block(on-page-load) */
+        $scope.onPageVariablesReady = function() {
+            /*
+             * variables can be accessed through '$scope.Variables' service here
+             * e.g. $scope.Variables.staticVariable1.getData()
+             */
+        };
+
+    }
+]);
+
+Application.$controller("CommonLoginDialogController", ["$scope", "DialogService",
+    function($scope, DialogService) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+
+        $scope.CommonLoginDialogError = function($event, $isolateScope) {
+            /*
+             * Error message can be accessed from the property $isolateScope.errMsg
+             */
+        };
+
+        $scope.CommonLoginDialogSuccess = function($event, $isolateScope) {
+            DialogService.hideDialog("CommonLoginDialog");
+        };
+    }
+]);
+</script>
+<script id="Common.variables.json">
+var _CommonPage_Variables_ ={ }
+</script>
+<script id="Common.html" type="text/ng-template">
+<wm-partial data-ng-controller="CommonPageController" name="CommonPage"> 
+ <wm-view name="loginDialogView" class="dialog-view"> 
+  <wm-logindialog modal="true" iconname="log-in" title="Login" name="CommonLoginDialog" on-error="CommonLoginDialogError($event, $scope)" on-success="CommonLoginDialogSuccess($event, $scope)"> 
+   <wm-dialogheader name="loginheader"></wm-dialogheader> 
+   <wm-dialogcontent name="logincontent"> 
+    <wm-form name="loginform"> 
+     <wm-message scopedataset="loginMessage" class="app-login-dialog-message" name="loginmessage"></wm-message> 
+     <wm-composite name="usernamefield"> 
+      <wm-label caption="Username" class="col-md-4" name="usernamelabel"></wm-label> 
+      <wm-text placeholder="Enter username" class="app-login-dialog-username" name="usernametext" autocomplete="off" autocorrect="off" autocapitalize="off"></wm-text> 
+     </wm-composite> 
+     <wm-composite widget="text" name="passwordfield"> 
+      <wm-label caption="Password" class="col-md-4" name="passwordlabel"></wm-label> 
+      <wm-text type="password" placeholder="Enter password" class="app-login-dialog-password" name="passwordtext" autocomplete="off" autocorrect="off" autocapitalize="off"></wm-text> 
+     </wm-composite> 
+    </wm-form> 
+   </wm-dialogcontent> 
+   <wm-dialogactions name="loginactions"> 
+    <wm-button class="btn-primary" caption="Sign in" name="loginbutton"></wm-button> 
+   </wm-dialogactions> 
+  </wm-logindialog> 
+ </wm-view> 
+</wm-partial>
+</script>

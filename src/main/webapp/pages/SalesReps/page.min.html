@@ -1,0 +1,855 @@
+<style id="SalesReps.css">
+.left-like-panel {
+    display: block !important;
+}
+.left-like-panel .app-list-item {
+    padding: 0;
+}
+.lite {
+    font-weight: 500;
+}
+.filter-label {
+    line-height: 3em;
+}
+.dialog-btns {
+    margin-right: 1em;
+    margin-left: 1em;
+}
+.table {
+    display: table;
+}
+.dialog-form {
+    padding: 8px;
+}
+.overflow-visible {
+    overflow: visible !important;
+}
+.wm-app .btn.btn-prim {
+    color: #ffffff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    box-shadow: 0px 1px 1px #666666;
+    -webkit-box-shadow: 0px 1px 1px #666666;
+    -moz-box-shadow: 0px 1px 1px #666666;
+    -ms-box-shadow: 0px 1px 1px #666666;
+    -o-box-shadow: 0px 1px 1px #666666;
+    background-color: #c77845;
+    /* Webkit (Safari/Chrome 10) */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f27221), color-stop(1, #a34509));
+    /* Webkit (Chrome 11+) */
+    background: -webkit-linear-gradient(top, #f27221 5%, #a34509 100%);
+    /* Mozilla Firefox */
+    background: -moz-linear-gradient(top, #f27221 5%, #a34509 100%);
+    /* Opera */
+    background: -o-linear-gradient(top, #f27221 5%, #a34509 100%);
+    /* IE10 Consumer Preview */
+    background: -ms-linear-gradient(top, #f27221 5%, #a34509 100%);
+    /* W3C Markup, IE10 Release Preview */
+    background: linear-gradient(to bottom, #f27221 5%, #a34509 100%);
+    /* IE9 */
+    filter: progid: DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#f27221, endColorstr=#a34509);
+    /* IE6 & IE7 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorStr='#f27221', EndColorStr='#a34509')";
+    /* IE8, IE9 */
+    border: 1px solid #c77845;
+}
+.wm-app .btn.btn-prim:hover {
+    /* Webkit (Safari/Chrome 10) */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #d45a0c), color-stop(1, #733106));
+    /* Webkit (Chrome 11+) */
+    background: -webkit-linear-gradient(top, #d45a0c 5%, #733106 100%);
+    /* Mozilla Firefox */
+    background: -moz-linear-gradient(top, #d45a0c 5%, #733106 100%);
+    /* Opera */
+    background: -o-linear-gradient(top, #d45a0c 5%, #733106 100%);
+    /* IE10 Consumer Preview */
+    background: -ms-linear-gradient(top, #d45a0c 5%, #733106 100%);
+    /* W3C Markup, IE10 Release Preview */
+    background: linear-gradient(to bottom, #d45a0c 5%, #733106 100%);
+    /* IE9 */
+    filter: progid: DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#d45a0c, endColorstr=#733106);
+    /* IE6 & IE7 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorStr='#d45a0c', EndColorStr='#733106')";
+    /* IE8, IE9 */
+}
+</style>
+<script id="SalesReps.js">
+Application.$controller("SalesRepsPageController", ["$scope",
+    function($scope) {
+        "use strict";
+
+        var allTasks;
+
+        $scope.SalesdbRepsDataonSuccess = function(variable, data) {
+            $scope.Widgets.livelist1.selecteditem = data[0];
+            setTimeout(function() {
+                $('.reps-list li:first').addClass('active');
+            }, 10);
+        };
+
+
+        $scope.allTasksForAReponSuccess = function(variable, data) {
+            data && data.forEach(function(task) {
+                task.done = task.done ? "Done" : "Pending";
+            });
+            allTasks = WM.copy(data);
+        };
+
+        $scope.filterGrid = function(status) {
+            if (!status) {
+                $scope.Variables.allTasksForARep.dataSet.data = allTasks;
+            } else {
+                $scope.Variables.allTasksForARep.dataSet.data = allTasks.filter(function(task) {
+                    return task.done == status;
+                });
+            }
+            $scope.Widgets.grid3.dataset = $scope.Variables.allTasksForARep.dataSet
+        };
+
+        $scope.$root.updateTaskVariable = function() {
+            $scope.Variables.allTasksForARep.update();
+        }
+    }
+]);
+
+Application.$controller("livelist1Controller", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
+
+
+
+Application.$controller("grid2Controller", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
+
+
+
+Application.$controller("grid3Controller", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
+
+Application.$controller("dialog1Controller", ["$scope", "$http", "DialogService",
+    function($scope, $http, DialogService) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+        $scope.insertTask = function() {
+            $http.post('./services/salesdb/Tasks/', {
+                "duedate": $scope.Widgets.dueDate.datavalue,
+                "description": $scope.Widgets.desc.datavalue,
+                "done": !!$scope.Widgets.isDone.datavalue,
+                "reps": $scope.Widgets.livelist1.selecteditem
+            }).success(function() {
+                $scope.$root.updateTaskVariable();
+                DialogService.hideDialog('dialog1');
+            })
+        };
+
+        $scope.cancelDialog = function() {
+            DialogService.hideDialog('dialog1');
+        }
+
+    }
+]);
+
+Application.$controller("liveform2Controller", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
+</script>
+<script id="SalesReps.variables.json">
+var _SalesRepsPage_Variables_ ={
+  "insertTask" : {
+    "firstRow" : 0,
+    "isList" : false,
+    "package" : "com.salesdb.Tasks",
+    "type" : "Tasks",
+    "startUpdate" : true,
+    "ignoreCase" : false,
+    "propertiesMap" : {
+      "primaryKeys" : [ "id" ],
+      "columns" : [ {
+        "precision" : 19,
+        "hibernateType" : "integer",
+        "isRelated" : false,
+        "isPrimaryKey" : true,
+        "length" : 255,
+        "generator" : "identity",
+        "columnName" : "ID",
+        "notNull" : true,
+        "type" : "integer",
+        "fieldName" : "id",
+        "fullyQualifiedType" : "integer"
+      }, {
+        "precision" : 19,
+        "hibernateType" : "string",
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 16777216,
+        "columnName" : "DESCRIPTION",
+        "notNull" : false,
+        "type" : "text",
+        "fieldName" : "description",
+        "fullyQualifiedType" : "text"
+      }, {
+        "precision" : 19,
+        "hibernateType" : "date",
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 10,
+        "columnName" : "DUEDATE",
+        "notNull" : false,
+        "type" : "date",
+        "fieldName" : "duedate",
+        "fullyQualifiedType" : "date"
+      }, {
+        "precision" : 19,
+        "hibernateType" : "boolean",
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 255,
+        "columnName" : "DONE",
+        "notNull" : false,
+        "type" : "boolean",
+        "fieldName" : "done",
+        "fullyQualifiedType" : "boolean"
+      }, {
+        "relatedTableName" : "REPS",
+        "isList" : false,
+        "hibernateType" : "integer",
+        "precision" : 19,
+        "columns" : [ {
+          "precision" : 19,
+          "hibernateType" : "integer",
+          "isRelated" : false,
+          "isPrimaryKey" : true,
+          "length" : 255,
+          "generator" : "identity",
+          "columnName" : "ID",
+          "notNull" : true,
+          "type" : "integer",
+          "fieldName" : "id",
+          "fullyQualifiedType" : "integer"
+        }, {
+          "precision" : 19,
+          "hibernateType" : "string",
+          "isRelated" : false,
+          "isPrimaryKey" : false,
+          "length" : 32,
+          "columnName" : "NAME",
+          "notNull" : true,
+          "type" : "string",
+          "fieldName" : "name",
+          "fullyQualifiedType" : "string"
+        }, {
+          "precision" : 19,
+          "hibernateType" : "integer",
+          "isRelated" : true,
+          "isPrimaryKey" : false,
+          "length" : 255,
+          "generator" : "assigned",
+          "columnName" : "CHANNEL_TYPE",
+          "notNull" : false,
+          "type" : "integer",
+          "fieldName" : "channels",
+          "fullyQualifiedType" : "integer"
+        }, {
+          "precision" : 19,
+          "hibernateType" : "string",
+          "isRelated" : false,
+          "isPrimaryKey" : false,
+          "length" : 64,
+          "columnName" : "STREET",
+          "notNull" : false,
+          "type" : "string",
+          "fieldName" : "street",
+          "fullyQualifiedType" : "string"
+        }, {
+          "precision" : 19,
+          "hibernateType" : "string",
+          "isRelated" : false,
+          "isPrimaryKey" : false,
+          "length" : 32,
+          "columnName" : "CITY",
+          "notNull" : false,
+          "type" : "string",
+          "fieldName" : "city",
+          "fullyQualifiedType" : "string"
+        }, {
+          "precision" : 19,
+          "hibernateType" : "string",
+          "isRelated" : false,
+          "isPrimaryKey" : false,
+          "length" : 2,
+          "columnName" : "STATE",
+          "notNull" : false,
+          "type" : "string",
+          "fieldName" : "state",
+          "fullyQualifiedType" : "string"
+        }, {
+          "precision" : 19,
+          "hibernateType" : "string",
+          "isRelated" : false,
+          "isPrimaryKey" : false,
+          "length" : 6,
+          "columnName" : "ZIP",
+          "notNull" : false,
+          "type" : "string",
+          "fieldName" : "zip",
+          "fullyQualifiedType" : "string"
+        }, {
+          "precision" : 19,
+          "hibernateType" : "string",
+          "isRelated" : false,
+          "isPrimaryKey" : false,
+          "length" : 1024,
+          "columnName" : "PICURL",
+          "notNull" : false,
+          "type" : "string",
+          "fieldName" : "picurl",
+          "fullyQualifiedType" : "string"
+        }, {
+          "precision" : 19,
+          "hibernateType" : "string",
+          "isRelated" : false,
+          "isPrimaryKey" : false,
+          "length" : 32,
+          "columnName" : "PASSWORD",
+          "notNull" : false,
+          "type" : "string",
+          "fieldName" : "password",
+          "fullyQualifiedType" : "string"
+        }, {
+          "precision" : 19,
+          "hibernateType" : "string",
+          "isRelated" : false,
+          "isPrimaryKey" : false,
+          "length" : 32,
+          "columnName" : "ROLE",
+          "notNull" : false,
+          "type" : "string",
+          "fieldName" : "role",
+          "fullyQualifiedType" : "string"
+        } ],
+        "relatedFieldName" : "reps.id",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "relatedEntityName" : "Reps",
+        "isPrimaryKey" : false,
+        "isRelated" : true,
+        "length" : 255,
+        "columnName" : "REP_ID",
+        "generator" : "assigned",
+        "fieldName" : "reps",
+        "notNull" : false
+      } ],
+      "tableType" : "TABLE",
+      "fullyQualifiedName" : "com.salesdb.Tasks",
+      "entityName" : "Tasks"
+    },
+    "transformationRequired" : false,
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "operation" : "read",
+    "saveInPhonegap" : false,
+    "_id" : "wm-wm.LiveVariable1408523695110",
+    "tableName" : "TASKS",
+    "name" : "insertTask",
+    "designMaxResults" : 10,
+    "relatedTables" : [ {
+      "relationName" : "relation9",
+      "package" : "com.insurancedb.Tasks",
+      "watchOn" : "SalesdbRepsData",
+      "columnName" : "reps",
+      "type" : "Reps"
+    }, {
+      "relationName" : "TASKS_1",
+      "package" : "com.salesdb.Tasks",
+      "watchOn" : "SalesdbRepsData",
+      "columnName" : "reps",
+      "type" : "Reps"
+    } ],
+    "liveSource" : "salesdb",
+    "inFlightBehavior" : "executeLast",
+    "properties" : [ "relation9", "TASKS_1" ],
+    "maxResults" : 20,
+    "matchMode" : "start",
+    "category" : "wm.LiveVariable",
+    "autoUpdate" : true,
+    "dataBinding" : [ ],
+    "filterFields" : { },
+    "owner" : "Page",
+    "tableType" : "TABLE"
+  },
+  "allTasksForARep" : {
+    "firstRow" : 0,
+    "isList" : false,
+    "package" : "com.salesdb.Tasks",
+    "type" : "Tasks",
+    "startUpdate" : false,
+    "ignoreCase" : false,
+    "propertiesMap" : {
+      "primaryKeys" : [ "id" ],
+      "columns" : [ {
+        "precision" : 19,
+        "isRelated" : false,
+        "isPrimaryKey" : true,
+        "length" : 255,
+        "generator" : "identity",
+        "columnName" : "ID",
+        "notNull" : true,
+        "type" : "integer",
+        "fieldName" : "id",
+        "fullyQualifiedType" : "integer"
+      }, {
+        "precision" : 19,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 16777216,
+        "columnName" : "DESCRIPTION",
+        "notNull" : false,
+        "type" : "string",
+        "fieldName" : "description",
+        "fullyQualifiedType" : "string"
+      }, {
+        "precision" : 19,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 10,
+        "columnName" : "DUEDATE",
+        "notNull" : false,
+        "type" : "date",
+        "fieldName" : "duedate",
+        "fullyQualifiedType" : "date"
+      }, {
+        "precision" : 19,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 255,
+        "columnName" : "DONE",
+        "notNull" : false,
+        "type" : "boolean",
+        "fieldName" : "done",
+        "fullyQualifiedType" : "boolean"
+      }, {
+        "relatedTableName" : "REPS",
+        "precision" : 19,
+        "columns" : [ {
+          "precision" : 19,
+          "isRelated" : false,
+          "isPrimaryKey" : true,
+          "length" : 255,
+          "generator" : "identity",
+          "columnName" : "ID",
+          "notNull" : true,
+          "type" : "integer",
+          "fieldName" : "id",
+          "fullyQualifiedType" : "integer"
+        }, {
+          "precision" : 19,
+          "isRelated" : false,
+          "isPrimaryKey" : false,
+          "length" : 32,
+          "columnName" : "NAME",
+          "notNull" : true,
+          "type" : "string",
+          "fieldName" : "name",
+          "fullyQualifiedType" : "string"
+        }, {
+          "precision" : 19,
+          "isRelated" : true,
+          "isPrimaryKey" : false,
+          "length" : 255,
+          "generator" : "assigned",
+          "columnName" : "CHANNEL_TYPE",
+          "notNull" : false,
+          "type" : "integer",
+          "fieldName" : "channelType",
+          "fullyQualifiedType" : "integer"
+        }, {
+          "precision" : 19,
+          "isRelated" : false,
+          "isPrimaryKey" : false,
+          "length" : 64,
+          "columnName" : "STREET",
+          "notNull" : false,
+          "type" : "string",
+          "fieldName" : "street",
+          "fullyQualifiedType" : "string"
+        }, {
+          "precision" : 19,
+          "isRelated" : false,
+          "isPrimaryKey" : false,
+          "length" : 32,
+          "columnName" : "CITY",
+          "notNull" : false,
+          "type" : "string",
+          "fieldName" : "city",
+          "fullyQualifiedType" : "string"
+        }, {
+          "precision" : 19,
+          "isRelated" : false,
+          "isPrimaryKey" : false,
+          "length" : 2,
+          "columnName" : "STATE",
+          "notNull" : false,
+          "type" : "string",
+          "fieldName" : "state",
+          "fullyQualifiedType" : "string"
+        }, {
+          "precision" : 19,
+          "isRelated" : false,
+          "isPrimaryKey" : false,
+          "length" : 6,
+          "columnName" : "ZIP",
+          "notNull" : false,
+          "type" : "string",
+          "fieldName" : "zip",
+          "fullyQualifiedType" : "string"
+        }, {
+          "precision" : 19,
+          "isRelated" : false,
+          "isPrimaryKey" : false,
+          "length" : 1024,
+          "columnName" : "PICURL",
+          "notNull" : false,
+          "type" : "string",
+          "fieldName" : "picurl",
+          "fullyQualifiedType" : "string"
+        }, {
+          "precision" : 19,
+          "isRelated" : false,
+          "isPrimaryKey" : false,
+          "length" : 32,
+          "columnName" : "PASSWORD",
+          "notNull" : false,
+          "type" : "string",
+          "fieldName" : "password",
+          "fullyQualifiedType" : "string"
+        }, {
+          "precision" : 19,
+          "isRelated" : false,
+          "isPrimaryKey" : false,
+          "length" : 32,
+          "columnName" : "ROLE",
+          "notNull" : false,
+          "type" : "string",
+          "fieldName" : "role",
+          "fullyQualifiedType" : "string"
+        } ],
+        "relatedFieldName" : "repId.id",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "relatedEntityName" : "Reps",
+        "isPrimaryKey" : false,
+        "isRelated" : true,
+        "length" : 255,
+        "columnName" : "REP_ID",
+        "generator" : "assigned",
+        "fieldName" : "repId",
+        "notNull" : false
+      } ],
+      "tableType" : "TABLE",
+      "fullyQualifiedName" : "com.salesdb.Tasks",
+      "entityName" : "Tasks"
+    },
+    "transformationRequired" : false,
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "operation" : "read",
+    "saveInPhonegap" : false,
+    "_id" : "wm-wm.LiveVariable1408521104448",
+    "tableName" : "TASKS",
+    "name" : "allTasksForARep",
+    "designMaxResults" : 10,
+    "relatedTables" : [ {
+      "relationName" : "relation9",
+      "package" : "com.insurancedb.Tasks",
+      "watchOn" : "SalesdbRepsData",
+      "columnName" : "reps",
+      "type" : "Reps"
+    }, {
+      "relationName" : "TASKS_1",
+      "package" : "com.salesdb.Tasks",
+      "watchOn" : "SalesdbRepsData",
+      "columnName" : "reps",
+      "type" : "Reps"
+    } ],
+    "liveSource" : "salesdb",
+    "inFlightBehavior" : "executeLast",
+    "onSuccess" : "Javascript",
+    "properties" : [ "relation9", "TASKS_1" ],
+    "maxResults" : 20,
+    "matchMode" : "start",
+    "category" : "wm.LiveVariable",
+    "autoUpdate" : true,
+    "dataBinding" : [ {
+      "value" : "bind:Widgets.livelist1.selecteditem.id",
+      "target" : "reps.id"
+    } ],
+    "filterFields" : { },
+    "owner" : "Page",
+    "tableType" : "TABLE"
+  },
+  "SalesdbRepsData" : {
+    "firstRow" : 0,
+    "isList" : true,
+    "package" : "com.salesdb.Reps",
+    "type" : "Reps",
+    "startUpdate" : true,
+    "ignoreCase" : false,
+    "propertiesMap" : {
+      "primaryKeys" : [ "id" ],
+      "columns" : [ {
+        "precision" : 19,
+        "isRelated" : false,
+        "isPrimaryKey" : true,
+        "length" : 255,
+        "generator" : "identity",
+        "columnName" : "ID",
+        "notNull" : true,
+        "type" : "integer",
+        "fieldName" : "id",
+        "fullyQualifiedType" : "integer"
+      }, {
+        "precision" : 19,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 32,
+        "columnName" : "NAME",
+        "notNull" : true,
+        "type" : "string",
+        "fieldName" : "name",
+        "fullyQualifiedType" : "string"
+      }, {
+        "relatedTableName" : "CHANNELS",
+        "precision" : 19,
+        "columns" : [ {
+          "precision" : 19,
+          "isRelated" : false,
+          "isPrimaryKey" : true,
+          "length" : 255,
+          "generator" : "identity",
+          "columnName" : "ID",
+          "notNull" : true,
+          "type" : "integer",
+          "fieldName" : "id",
+          "fullyQualifiedType" : "integer"
+        }, {
+          "precision" : 19,
+          "isRelated" : false,
+          "isPrimaryKey" : false,
+          "length" : 40,
+          "columnName" : "NAME",
+          "notNull" : true,
+          "type" : "string",
+          "fieldName" : "name",
+          "fullyQualifiedType" : "string"
+        } ],
+        "relatedFieldName" : "channelType.id",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "relatedEntityName" : "Channels",
+        "isPrimaryKey" : false,
+        "isRelated" : true,
+        "length" : 255,
+        "columnName" : "CHANNEL_TYPE",
+        "generator" : "assigned",
+        "fieldName" : "channelType",
+        "notNull" : false
+      }, {
+        "precision" : 19,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 64,
+        "columnName" : "STREET",
+        "notNull" : false,
+        "type" : "string",
+        "fieldName" : "street",
+        "fullyQualifiedType" : "string"
+      }, {
+        "precision" : 19,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 32,
+        "columnName" : "CITY",
+        "notNull" : false,
+        "type" : "string",
+        "fieldName" : "city",
+        "fullyQualifiedType" : "string"
+      }, {
+        "precision" : 19,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 2,
+        "columnName" : "STATE",
+        "notNull" : false,
+        "type" : "string",
+        "fieldName" : "state",
+        "fullyQualifiedType" : "string"
+      }, {
+        "precision" : 19,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 6,
+        "columnName" : "ZIP",
+        "notNull" : false,
+        "type" : "string",
+        "fieldName" : "zip",
+        "fullyQualifiedType" : "string"
+      }, {
+        "precision" : 19,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 1024,
+        "columnName" : "PICURL",
+        "notNull" : false,
+        "type" : "string",
+        "fieldName" : "picurl",
+        "fullyQualifiedType" : "string"
+      }, {
+        "precision" : 19,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 32,
+        "columnName" : "PASSWORD",
+        "notNull" : false,
+        "type" : "string",
+        "fieldName" : "password",
+        "fullyQualifiedType" : "string"
+      }, {
+        "precision" : 19,
+        "isRelated" : false,
+        "isPrimaryKey" : false,
+        "length" : 32,
+        "columnName" : "ROLE",
+        "notNull" : false,
+        "type" : "string",
+        "fieldName" : "role",
+        "fullyQualifiedType" : "string"
+      } ],
+      "tableType" : "TABLE",
+      "fullyQualifiedName" : "com.salesdb.Reps",
+      "entityName" : "Reps"
+    },
+    "transformationRequired" : false,
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "operation" : "read",
+    "saveInPhonegap" : false,
+    "_id" : "wm-wm.LiveVariable1408208518887",
+    "tableName" : "REPS",
+    "name" : "SalesdbRepsData",
+    "designMaxResults" : 10,
+    "relatedTables" : [ {
+      "relationName" : "REPS_1",
+      "package" : "com.insurancedb.Reps",
+      "watchOn" : "InsurancedbChannelsData",
+      "columnName" : "channels",
+      "type" : "Channels"
+    } ],
+    "liveSource" : "salesdb",
+    "inFlightBehavior" : "executeLast",
+    "onSuccess" : "Javascript",
+    "properties" : [ "REPS_1" ],
+    "maxResults" : 10,
+    "matchMode" : "start",
+    "category" : "wm.LiveVariable",
+    "autoUpdate" : true,
+    "dataBinding" : [ ],
+    "filterFields" : { },
+    "owner" : "Page",
+    "tableType" : "TABLE"
+  }
+}
+</script>
+<script id="SalesReps.html" type="text/ng-template">
+<wm-page layouttype="two-column" columns="2" data-ng-controller="SalesRepsPageController" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top-nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" name="left_panel1">
+            <wm-livelist name="livelist1" data-ng-controller="livelist1Controller" height="100%" dataset="bind:Variables.SalesdbRepsData.dataSet" class="app-list" listclass="nav nav-pills nav-stacked" itemclass="nav-item">
+                <wm-listtemplate name="listtemplate1">
+                    <wm-anchor hyperlink="#" caption="bind:Variables.SalesdbRepsData.dataSet.name" name="button0" data-ng-class="{'active': Widgets.livelist1.selecteditem.id === item.id}" textalign="left"></wm-anchor>
+                </wm-listtemplate>
+            </wm-livelist>
+        </wm-left-panel>
+        <wm-page-content class="app-content-column" columnwidth="10" name="column1" paddingleft="1" paddingright="1" paddingtop="1" paddingunit="em">
+            <wm-layoutgrid rows="3" columns="1" name="layoutgrid2">
+                <wm-gridrow name="gridrow4">
+                    <wm-gridcolumn name="gridcolumn10" columnwidth="2">
+                        <wm-picture name="picture2" picturesource="bind:Widgets.livelist1.selecteditem.picurl" width="150"></wm-picture>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn name="gridcolumn11" columnwidth="3">
+                        <wm-label width="100%" name="labe12" caption="bind:Widgets.livelist1.selecteditem.name"></wm-label>
+                        <wm-label width="100%" name="labe13" caption="bind:Widgets.livelist1.selecteditem.street + ', ' + Widgets.livelist1.selecteditem.city" class="lite"></wm-label>
+                        <wm-label width="100%" name="labe15" caption="bind:Widgets.livelist1.selecteditem.state + '-' + Widgets.livelist1.selecteditem.zip" class="lite"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn name="gridcolumn12" columnwidth="7">
+                        <wm-picture name="picture1" picturesource="bind:'http://maps.googleapis.com/maps/api/staticmap?key=AIzaSyCEtrJvGCj1Un6nqbNYJEZW6QRNx0HtB3E&amp;center=' + Widgets.livelist1.selecteditem.street + ',' + Widgets.livelist1.selecteditem.city + ',' + Widgets.livelist1.selecteditem.zip + '&amp;zoom=13&amp;size=600x150&amp;type=.jpg'"></wm-picture>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow4">
+                    <wm-gridcolumn name="gridcolumn7" class="overflow-visible">
+                        <wm-label name="label11" width="100%" caption="Track Tasks:" margintop="2" marginunit="em"></wm-label>
+                        <wm-label class="col-md-3" caption="" name="label6"></wm-label>
+                        <wm-label class="col-md-2 filter-label" caption="Filter: " name="label7" textalign="right"></wm-label>
+                        <wm-buttongroup name="buttongroup1" class="col-md-5">
+                            <wm-button caption="All" name="button1" on-click="filterGrid()" class="btn-prim"></wm-button>
+                            <wm-button caption="Pending" name="button2" on-click="filterGrid('Pending')" class="btn-prim"></wm-button>
+                            <wm-button caption="Done" name="button3" on-click="filterGrid('Done')" class="btn-prim"></wm-button>
+                        </wm-buttongroup>
+                        <wm-button name="button4" class="col-md-2 btn-prim" caption="Add Task" iconname="plus-sign" on-click="dialog1.show" margintop="0.2" marginunit="em"></wm-button>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+            <wm-grid name="grid3" dataset="bind:Variables.allTasksForARep.dataSet" readonlygrid="false" insertrow="false" updaterow="false" deleterow="false">
+                <wm-grid-column binding="description" caption="description" type="text" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                <wm-grid-column binding="duedate" caption="duedate" type="date" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                <wm-grid-column binding="done" caption="Status" type="boolean" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+            </wm-grid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+    <wm-view class="dialog-view" name="view1" show="false">
+        <wm-dialog dialogtype="design-dialog" modal="true" name="dialog1" title="Add Task">
+            <wm-dialogheader name="dialogheader1"></wm-dialogheader>
+            <wm-dialogcontent name="dialogcontent1" class="overflow-visible dialog-form">
+                <wm-composite widget="date" name="composite1">
+                    <wm-label class="col-md-2" name="label2" caption="Due"></wm-label>
+                    <wm-date name="dueDate"></wm-date>
+                </wm-composite>
+                <wm-composite widget="textarea" name="composite2">
+                    <wm-label class="col-md-2" name="label3" caption="Desc"></wm-label>
+                    <wm-textarea name="desc"></wm-textarea>
+                </wm-composite>
+                <wm-composite widget="checkbox" name="composite3">
+                    <wm-label class="col-md-2" name="label4" caption="Is Done"></wm-label>
+                    <wm-checkbox name="isDone"></wm-checkbox>
+                </wm-composite>
+            </wm-dialogcontent>
+            <wm-dialogactions name="dialogactions1">
+                <wm-button name="button2" caption="Cancel" iconname="remove-sign" on-click="dialog1.hide" class="btn-secondary"></wm-button>
+                <wm-button name="button1" caption="Save" iconname="save" on-click="insertTask()" class="btn-primary"></wm-button>
+            </wm-dialogactions>
+        </wm-dialog>
+    </wm-view>
+</wm-page>
+</script>

@@ -1,0 +1,239 @@
+{
+  "leadsByChannels" : {
+    "_id" : "wm-wm.ServiceVariable1404713228345",
+    "name" : "leadsByChannels",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "salesdbleadsByChannelrtnType",
+    "service" : "salesdb",
+    "operation" : "executeLeadsByChannel",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "serviceSubType" : "query",
+    "wmServiceOperationInfo" : {
+      "relativePath" : "/salesdb/queryExecutor/queries/leadsByChannel",
+      "httpMethod" : "get",
+      "name" : "executeLeadsByChannel",
+      "parameters" : [ {
+        "name" : "channel",
+        "parameterType" : "query",
+        "type" : "integer"
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "type" : "integer"
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "type" : "integer"
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "type" : "string"
+      } ]
+    },
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "isList" : false,
+    "firstRow" : 0,
+    "maxResults" : 1000,
+    "designMaxResults" : 10,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "onBeforeDatasetReady" : "Javascript",
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "leadsCount" : {
+    "_id" : "wm-wm.ServiceVariable1404969517123",
+    "name" : "leadsCount",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "string",
+    "service" : "salesdb",
+    "operation" : "executeLeadsCount",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "serviceSubType" : "query",
+    "wmServiceOperationInfo" : {
+      "relativePath" : "/salesdb/queryExecutor/queries/leadsCount",
+      "httpMethod" : "get",
+      "name" : "executeLeadsCount",
+      "parameters" : [ {
+        "name" : "channel",
+        "parameterType" : "query",
+        "type" : "integer"
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "type" : "integer"
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "type" : "integer"
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "type" : "string"
+      } ]
+    },
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "isList" : false,
+    "firstRow" : 0,
+    "maxResults" : 5,
+    "designMaxResults" : 10,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false
+  },
+  "repsCount" : {
+    "_id" : "wm-wm.ServiceVariable1404969534987",
+    "name" : "repsCount",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "string",
+    "service" : "salesdb",
+    "operation" : "executeRepsCount",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "serviceSubType" : "query",
+    "wmServiceOperationInfo" : {
+      "relativePath" : "/salesdb/queryExecutor/queries/repsCount",
+      "httpMethod" : "get",
+      "name" : "executeRepsCount",
+      "parameters" : [ {
+        "name" : "channel",
+        "parameterType" : "query",
+        "type" : "integer"
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "type" : "integer"
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "type" : "integer"
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "type" : "string"
+      } ]
+    },
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "isList" : false,
+    "firstRow" : 0,
+    "maxResults" : 5,
+    "designMaxResults" : 10,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false
+  },
+  "salesByReps" : {
+    "_id" : "wm-wm.ServiceVariable1404983464905",
+    "name" : "salesByReps",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "string",
+    "service" : "salesdb",
+    "operation" : "executeSalesByReps",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "serviceSubType" : "query",
+    "wmServiceOperationInfo" : {
+      "relativePath" : "/salesdb/queryExecutor/queries/salesByReps",
+      "httpMethod" : "get",
+      "name" : "executeSalesByReps",
+      "parameters" : [ {
+        "name" : "channel",
+        "parameterType" : "query",
+        "type" : "integer"
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "type" : "integer"
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "type" : "integer"
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "type" : "string"
+      } ]
+    },
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "isList" : false,
+    "firstRow" : 0,
+    "maxResults" : 1000,
+    "designMaxResults" : 10,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false
+  },
+  "salesRevenueAndCount" : {
+    "_id" : "wm-wm.ServiceVariable1404969450359",
+    "name" : "salesRevenueAndCount",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "string",
+    "service" : "salesdb",
+    "operation" : "executeSalesRevenueAndCount",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "serviceSubType" : "query",
+    "wmServiceOperationInfo" : {
+      "relativePath" : "/salesdb/queryExecutor/queries/salesRevenueAndCount",
+      "httpMethod" : "get",
+      "name" : "executeSalesRevenueAndCount",
+      "parameters" : [ {
+        "name" : "channel",
+        "parameterType" : "query",
+        "type" : "integer"
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "type" : "integer"
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "type" : "integer"
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "type" : "string"
+      } ]
+    },
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "isList" : false,
+    "firstRow" : 0,
+    "maxResults" : 5,
+    "designMaxResults" : 10,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false
+  }
+}

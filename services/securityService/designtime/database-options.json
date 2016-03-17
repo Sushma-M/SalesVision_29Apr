@@ -1,0 +1,1 @@
+{"modelName":"salesdb","entityName":"Reps","tableName":"REPS","unamePropertyName":"NAME","unameColumnName":"NAME","uidPropertyName":"ID","uidColumnName":"ID","pwPropertyName":"PASSWORD","pwColumnName":"PASSWORD","rolePropertyName":"ROLE","roleColumnName":"ROLE","useRolesQuery":false,"rolesByUsernameQuery":"","tenantIdField":null,"defTenantId":0,"tenantIdPropertyName":null}

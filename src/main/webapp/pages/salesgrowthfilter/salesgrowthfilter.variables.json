@@ -1,0 +1,22 @@
+{
+  "channelsList" : {
+    "isList" : true,
+    "category" : "wm.Variable",
+    "saveInPhonegap" : false,
+    "dataBinding" : [ ],
+    "_id" : "wm-wm.Variable1402656934713",
+    "name" : "channelsList",
+    "owner" : "Page",
+    "type" : "string",
+    "dataSet" : [ {
+      "name" : "Brokers",
+      "dataValue" : "2"
+    }, {
+      "name" : "Agencies",
+      "dataValue" : "3"
+    }, {
+      "name" : "Partners",
+      "dataValue" : "4"
+    } ]
+  }
+}

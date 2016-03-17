@@ -1,0 +1,47 @@
+<style id="salesgrowthfilter.css">
+
+</style>
+<script id="salesgrowthfilter.js">
+Application.$controller("salesgrowthfilterPageController", ["$scope",
+    function($scope) {
+        "use strict";
+
+
+
+    }
+]);
+</script>
+<script id="salesgrowthfilter.variables.json">
+var _salesgrowthfilterPage_Variables_ ={
+  "channelsList" : {
+    "isList" : true,
+    "category" : "wm.Variable",
+    "saveInPhonegap" : false,
+    "dataBinding" : [ ],
+    "_id" : "wm-wm.Variable1402656934713",
+    "name" : "channelsList",
+    "owner" : "Page",
+    "type" : "string",
+    "dataSet" : [ {
+      "name" : "Brokers",
+      "dataValue" : "2"
+    }, {
+      "name" : "Agencies",
+      "dataValue" : "3"
+    }, {
+      "name" : "Partners",
+      "dataValue" : "4"
+    } ]
+  }
+}
+</script>
+<script id="salesgrowthfilter.html" type="text/ng-template">
+<wm-partial data-ng-controller="salesgrowthfilterPageController" name="partial1" class="dashboard-filter" type="left-panel"> 
+ <wm-composite widget="select" name="composite1"> 
+  <wm-label class="col-md-4" caption="Channel" name="label1"></wm-label> 
+  <wm-select name="channelFilter" placeholder="Select Channel" width="12em" dataset="bind:Variables.channelsList.dataSet" datafield="dataValue" displayfield="name" datavalue="2"></wm-select> 
+ </wm-composite> 
+ <wm-button name="button2" caption="Reset" iconname="remove-sign" on-click="clear()" class="btn-secondary"></wm-button> 
+ <wm-button name="button1" caption="Filter" iconname="filter" on-click="filter()" class="btn-primary"></wm-button> 
+</wm-partial>
+</script>

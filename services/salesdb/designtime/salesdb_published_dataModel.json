@@ -1,0 +1,919 @@
+{
+  "name" : "salesdb",
+  "description" : null,
+  "packageName" : "com.salesdb",
+  "draft" : false,
+  "tables" : [ {
+    "name" : "CUSTOMERS",
+    "oldName" : null,
+    "entityName" : null,
+    "type" : "TABLE",
+    "schema" : "PUBLIC",
+    "catalog" : "PUBLIC",
+    "columns" : [ {
+      "name" : "ID",
+      "oldName" : "ID",
+      "fieldName" : "id",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "identity",
+      "sequenceName" : null
+    }, {
+      "name" : "NAME",
+      "oldName" : "NAME",
+      "fieldName" : "name",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 32,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : null,
+      "sequenceName" : null
+    }, {
+      "name" : "STATE_ID",
+      "oldName" : "STATE_ID",
+      "fieldName" : "states",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : null,
+      "sequenceName" : null
+    } ],
+    "primaryKey" : {
+      "name" : "GENERATED_PK_CUSTOMERS_ID",
+      "virtual" : false,
+      "columns" : [ "ID" ]
+    },
+    "relations" : [ {
+      "name" : "GENERATED_FK_CUSTOMERS_TO_STATES_STATE_ID",
+      "fieldName" : "CUSTOMERS_1",
+      "cardinality" : "ManyToOne",
+      "sourceTable" : "CUSTOMERS",
+      "targetTable" : "STATES",
+      "mappings" : [ {
+        "sourceColumn" : "STATE_ID",
+        "targetColumn" : "ID"
+      } ],
+      "primary" : true,
+      "virtual" : false
+    }, {
+      "name" : "GENERATED_FK_CUSTOMERS_TO_LEADS_CUSTOMER_ID",
+      "fieldName" : null,
+      "cardinality" : "OneToMany",
+      "sourceTable" : "CUSTOMERS",
+      "targetTable" : "LEADS",
+      "mappings" : [ {
+        "sourceColumn" : "ID",
+        "targetColumn" : "CUSTOMER_ID"
+      } ],
+      "primary" : false,
+      "virtual" : false
+    } ],
+    "constraints" : null
+  }, {
+    "name" : "STATES",
+    "oldName" : null,
+    "entityName" : null,
+    "type" : "TABLE",
+    "schema" : "PUBLIC",
+    "catalog" : "PUBLIC",
+    "columns" : [ {
+      "name" : "ID",
+      "oldName" : "ID",
+      "fieldName" : "id",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "identity",
+      "sequenceName" : null
+    }, {
+      "name" : "NAME",
+      "oldName" : "NAME",
+      "fieldName" : "name",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 40,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : null,
+      "sequenceName" : null
+    }, {
+      "name" : "ABBREV",
+      "oldName" : "ABBREV",
+      "fieldName" : "abbrev",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 2,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : null,
+      "sequenceName" : null
+    } ],
+    "primaryKey" : {
+      "name" : "GENERATED_PK_STATES_ID",
+      "virtual" : false,
+      "columns" : [ "ID" ]
+    },
+    "relations" : [ {
+      "name" : "GENERATED_FK_CUSTOMERS_TO_STATES_STATE_ID",
+      "fieldName" : null,
+      "cardinality" : "OneToMany",
+      "sourceTable" : "STATES",
+      "targetTable" : "CUSTOMERS",
+      "mappings" : [ {
+        "sourceColumn" : "ID",
+        "targetColumn" : "STATE_ID"
+      } ],
+      "primary" : false,
+      "virtual" : false
+    } ],
+    "constraints" : null
+  }, {
+    "name" : "FOLLOW_UPS",
+    "oldName" : null,
+    "entityName" : null,
+    "type" : "TABLE",
+    "schema" : "PUBLIC",
+    "catalog" : "PUBLIC",
+    "columns" : [ {
+      "name" : "ID",
+      "oldName" : "ID",
+      "fieldName" : "id",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "identity",
+      "sequenceName" : null
+    }, {
+      "name" : "QUOTE_ID",
+      "oldName" : "QUOTE_ID",
+      "fieldName" : "quotes",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : null,
+      "sequenceName" : null
+    }, {
+      "name" : "ENTRY_DATE",
+      "oldName" : "ENTRY_DATE",
+      "fieldName" : "entryDate",
+      "sqlType" : "date",
+      "javaType" : "date",
+      "length" : 10,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : null,
+      "sequenceName" : null
+    } ],
+    "primaryKey" : {
+      "name" : "GENERATED_PK_FOLLOW_UPS_ID",
+      "virtual" : false,
+      "columns" : [ "ID" ]
+    },
+    "relations" : [ {
+      "name" : "GENERATED_FK_FOLLOW_UPS_TO_QUOTES_QUOTE_ID",
+      "fieldName" : "FOLLOW_UPS_1",
+      "cardinality" : "ManyToOne",
+      "sourceTable" : "FOLLOW_UPS",
+      "targetTable" : "QUOTES",
+      "mappings" : [ {
+        "sourceColumn" : "QUOTE_ID",
+        "targetColumn" : "ID"
+      } ],
+      "primary" : true,
+      "virtual" : false
+    } ],
+    "constraints" : null
+  }, {
+    "name" : "CHANNELS",
+    "oldName" : null,
+    "entityName" : null,
+    "type" : "TABLE",
+    "schema" : "PUBLIC",
+    "catalog" : "PUBLIC",
+    "columns" : [ {
+      "name" : "ID",
+      "oldName" : "ID",
+      "fieldName" : "id",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "identity",
+      "sequenceName" : null
+    }, {
+      "name" : "NAME",
+      "oldName" : "NAME",
+      "fieldName" : "name",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 40,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : null,
+      "sequenceName" : null
+    } ],
+    "primaryKey" : {
+      "name" : "GENERATED_PK_CHANNELS_ID",
+      "virtual" : false,
+      "columns" : [ "ID" ]
+    },
+    "relations" : [ {
+      "name" : "GENERATED_FK_CHANNELS_TO_REPS_CHANNEL_TYPE",
+      "fieldName" : null,
+      "cardinality" : "OneToMany",
+      "sourceTable" : "CHANNELS",
+      "targetTable" : "REPS",
+      "mappings" : [ {
+        "sourceColumn" : "ID",
+        "targetColumn" : "CHANNEL_TYPE"
+      } ],
+      "primary" : false,
+      "virtual" : false
+    } ],
+    "constraints" : null
+  }, {
+    "name" : "SALES",
+    "oldName" : null,
+    "entityName" : null,
+    "type" : "TABLE",
+    "schema" : "PUBLIC",
+    "catalog" : "PUBLIC",
+    "columns" : [ {
+      "name" : "ID",
+      "oldName" : "ID",
+      "fieldName" : "id",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "identity",
+      "sequenceName" : null
+    }, {
+      "name" : "ENTRY_DATE",
+      "oldName" : "ENTRY_DATE",
+      "fieldName" : "entryDate",
+      "sqlType" : "date",
+      "javaType" : "date",
+      "length" : 10,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : null,
+      "sequenceName" : null
+    }, {
+      "name" : "QUOTE_ID",
+      "oldName" : "QUOTE_ID",
+      "fieldName" : "quotes",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    }, {
+      "name" : "PRODUCT_ID",
+      "oldName" : "PRODUCT_ID",
+      "fieldName" : "products",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    }, {
+      "name" : "SALES",
+      "oldName" : "SALES",
+      "fieldName" : "sales",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : null,
+      "sequenceName" : null
+    }, {
+      "name" : "IS_RENEWAL",
+      "oldName" : "IS_RENEWAL",
+      "fieldName" : "isRenewal",
+      "sqlType" : "boolean",
+      "javaType" : "boolean",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 2,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : null,
+      "sequenceName" : null
+    } ],
+    "primaryKey" : {
+      "name" : "GENERATED_PK_SALES_ID",
+      "virtual" : false,
+      "columns" : [ "ID" ]
+    },
+    "relations" : [ {
+      "name" : "GENERATED_FK_SALES_TO_PRODUCTS_PRODUCT_ID",
+      "fieldName" : "SALES_1",
+      "cardinality" : "ManyToOne",
+      "sourceTable" : "SALES",
+      "targetTable" : "PRODUCTS",
+      "mappings" : [ {
+        "sourceColumn" : "PRODUCT_ID",
+        "targetColumn" : "ID"
+      } ],
+      "primary" : true,
+      "virtual" : false
+    }, {
+      "name" : "GENERATED_FK_SALES_TO_QUOTES_QUOTE_ID",
+      "fieldName" : "SALES_2",
+      "cardinality" : "ManyToOne",
+      "sourceTable" : "SALES",
+      "targetTable" : "QUOTES",
+      "mappings" : [ {
+        "sourceColumn" : "QUOTE_ID",
+        "targetColumn" : "ID"
+      } ],
+      "primary" : true,
+      "virtual" : false
+    } ],
+    "constraints" : null
+  }, {
+    "name" : "TASKS",
+    "oldName" : null,
+    "entityName" : null,
+    "type" : "TABLE",
+    "schema" : "PUBLIC",
+    "catalog" : "PUBLIC",
+    "columns" : [ {
+      "name" : "ID",
+      "oldName" : "ID",
+      "fieldName" : "id",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "identity",
+      "sequenceName" : null
+    }, {
+      "name" : "DESCRIPTION",
+      "oldName" : "DESCRIPTION",
+      "fieldName" : "description",
+      "sqlType" : null,
+      "javaType" : "text",
+      "length" : 16777216,
+      "precision" : 19,
+      "scale" : 2,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : null,
+      "sequenceName" : null
+    }, {
+      "name" : "DUEDATE",
+      "oldName" : "DUEDATE",
+      "fieldName" : "duedate",
+      "sqlType" : "date",
+      "javaType" : "date",
+      "length" : 10,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : null,
+      "sequenceName" : null
+    }, {
+      "name" : "DONE",
+      "oldName" : "DONE",
+      "fieldName" : "done",
+      "sqlType" : "boolean",
+      "javaType" : "boolean",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 2,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : null,
+      "sequenceName" : null
+    }, {
+      "name" : "REP_ID",
+      "oldName" : "REP_ID",
+      "fieldName" : "reps",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    } ],
+    "primaryKey" : {
+      "name" : "GENERATED_PK_TASKS_ID",
+      "virtual" : false,
+      "columns" : [ "ID" ]
+    },
+    "relations" : [ {
+      "name" : "GENERATED_FK_TASKS_TO_REPS_REP_ID",
+      "fieldName" : "TASKS_1",
+      "cardinality" : "ManyToOne",
+      "sourceTable" : "TASKS",
+      "targetTable" : "REPS",
+      "mappings" : [ {
+        "sourceColumn" : "REP_ID",
+        "targetColumn" : "ID"
+      } ],
+      "primary" : true,
+      "virtual" : false
+    } ],
+    "constraints" : null
+  }, {
+    "name" : "QUOTES",
+    "oldName" : null,
+    "entityName" : null,
+    "type" : "TABLE",
+    "schema" : "PUBLIC",
+    "catalog" : "PUBLIC",
+    "columns" : [ {
+      "name" : "ID",
+      "oldName" : "ID",
+      "fieldName" : "id",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "identity",
+      "sequenceName" : null
+    }, {
+      "name" : "LEAD_ID",
+      "oldName" : "LEAD_ID",
+      "fieldName" : "leads",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    }, {
+      "name" : "ENTRY_DATE",
+      "oldName" : "ENTRY_DATE",
+      "fieldName" : "entryDate",
+      "sqlType" : "date",
+      "javaType" : "date",
+      "length" : 10,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : null,
+      "sequenceName" : null
+    }, {
+      "name" : "REP_ID",
+      "oldName" : "REP_ID",
+      "fieldName" : "reps",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : null,
+      "sequenceName" : null
+    }, {
+      "name" : "ESTIMATED_SALE",
+      "oldName" : "ESTIMATED_SALE",
+      "fieldName" : "estimatedSale",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : null,
+      "sequenceName" : null
+    } ],
+    "primaryKey" : {
+      "name" : "GENERATED_PK_QUOTES_ID",
+      "virtual" : false,
+      "columns" : [ "ID" ]
+    },
+    "relations" : [ {
+      "name" : "GENERATED_FK_QUOTES_TO_REPS_REP_ID",
+      "fieldName" : "QUOTES_1",
+      "cardinality" : "ManyToOne",
+      "sourceTable" : "QUOTES",
+      "targetTable" : "REPS",
+      "mappings" : [ {
+        "sourceColumn" : "REP_ID",
+        "targetColumn" : "ID"
+      } ],
+      "primary" : true,
+      "virtual" : false
+    }, {
+      "name" : "GENERATED_FK_QUOTES_TO_LEADS_LEAD_ID",
+      "fieldName" : "QUOTES_2",
+      "cardinality" : "ManyToOne",
+      "sourceTable" : "QUOTES",
+      "targetTable" : "LEADS",
+      "mappings" : [ {
+        "sourceColumn" : "LEAD_ID",
+        "targetColumn" : "ID"
+      } ],
+      "primary" : true,
+      "virtual" : false
+    }, {
+      "name" : "GENERATED_FK_FOLLOW_UPS_TO_QUOTES_QUOTE_ID",
+      "fieldName" : null,
+      "cardinality" : "OneToMany",
+      "sourceTable" : "QUOTES",
+      "targetTable" : "FOLLOW_UPS",
+      "mappings" : [ {
+        "sourceColumn" : "ID",
+        "targetColumn" : "QUOTE_ID"
+      } ],
+      "primary" : false,
+      "virtual" : false
+    }, {
+      "name" : "GENERATED_FK_SALES_TO_QUOTES_QUOTE_ID",
+      "fieldName" : null,
+      "cardinality" : "OneToMany",
+      "sourceTable" : "QUOTES",
+      "targetTable" : "SALES",
+      "mappings" : [ {
+        "sourceColumn" : "ID",
+        "targetColumn" : "QUOTE_ID"
+      } ],
+      "primary" : false,
+      "virtual" : false
+    } ],
+    "constraints" : null
+  }, {
+    "name" : "PRODUCTS",
+    "oldName" : null,
+    "entityName" : null,
+    "type" : "TABLE",
+    "schema" : "PUBLIC",
+    "catalog" : "PUBLIC",
+    "columns" : [ {
+      "name" : "ID",
+      "oldName" : "ID",
+      "fieldName" : "id",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "identity",
+      "sequenceName" : null
+    }, {
+      "name" : "NAME",
+      "oldName" : "NAME",
+      "fieldName" : "name",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 40,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : null,
+      "sequenceName" : null
+    } ],
+    "primaryKey" : {
+      "name" : "GENERATED_PK_PRODUCTS_ID",
+      "virtual" : false,
+      "columns" : [ "ID" ]
+    },
+    "relations" : [ {
+      "name" : "GENERATED_FK_SALES_TO_PRODUCTS_PRODUCT_ID",
+      "fieldName" : null,
+      "cardinality" : "OneToMany",
+      "sourceTable" : "PRODUCTS",
+      "targetTable" : "SALES",
+      "mappings" : [ {
+        "sourceColumn" : "ID",
+        "targetColumn" : "PRODUCT_ID"
+      } ],
+      "primary" : false,
+      "virtual" : false
+    } ],
+    "constraints" : null
+  }, {
+    "name" : "REPS",
+    "oldName" : null,
+    "entityName" : null,
+    "type" : "TABLE",
+    "schema" : "PUBLIC",
+    "catalog" : "PUBLIC",
+    "columns" : [ {
+      "name" : "ID",
+      "oldName" : "ID",
+      "fieldName" : "id",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "identity",
+      "sequenceName" : null
+    }, {
+      "name" : "NAME",
+      "oldName" : "NAME",
+      "fieldName" : "name",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 32,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : null,
+      "sequenceName" : null
+    }, {
+      "name" : "CHANNEL_TYPE",
+      "oldName" : "CHANNEL_TYPE",
+      "fieldName" : "channels",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    }, {
+      "name" : "STREET",
+      "oldName" : "STREET",
+      "fieldName" : "street",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 64,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : null,
+      "sequenceName" : null
+    }, {
+      "name" : "CITY",
+      "oldName" : "CITY",
+      "fieldName" : "city",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 32,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : null,
+      "sequenceName" : null
+    }, {
+      "name" : "STATE",
+      "oldName" : "STATE",
+      "fieldName" : "state",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 2,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : null,
+      "sequenceName" : null
+    }, {
+      "name" : "ZIP",
+      "oldName" : "ZIP",
+      "fieldName" : "zip",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 6,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : null,
+      "sequenceName" : null
+    }, {
+      "name" : "PICURL",
+      "oldName" : "PICURL",
+      "fieldName" : "picurl",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 1024,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : null,
+      "sequenceName" : null
+    }, {
+      "name" : "PASSWORD",
+      "oldName" : "PASSWORD",
+      "fieldName" : "password",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 32,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : null,
+      "sequenceName" : null
+    }, {
+      "name" : "ROLE",
+      "oldName" : "ROLE",
+      "fieldName" : "role",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 32,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : null,
+      "sequenceName" : null
+    } ],
+    "primaryKey" : {
+      "name" : "GENERATED_PK_REPS_ID",
+      "virtual" : false,
+      "columns" : [ "ID" ]
+    },
+    "relations" : [ {
+      "name" : "GENERATED_FK_CHANNELS_TO_REPS_CHANNEL_TYPE",
+      "fieldName" : "REPS_1",
+      "cardinality" : "ManyToOne",
+      "sourceTable" : "REPS",
+      "targetTable" : "CHANNELS",
+      "mappings" : [ {
+        "sourceColumn" : "CHANNEL_TYPE",
+        "targetColumn" : "ID"
+      } ],
+      "primary" : true,
+      "virtual" : false
+    }, {
+      "name" : "GENERATED_FK_TASKS_TO_REPS_REP_ID",
+      "fieldName" : null,
+      "cardinality" : "OneToMany",
+      "sourceTable" : "REPS",
+      "targetTable" : "TASKS",
+      "mappings" : [ {
+        "sourceColumn" : "ID",
+        "targetColumn" : "REP_ID"
+      } ],
+      "primary" : false,
+      "virtual" : false
+    }, {
+      "name" : "GENERATED_FK_QUOTES_TO_REPS_REP_ID",
+      "fieldName" : null,
+      "cardinality" : "OneToMany",
+      "sourceTable" : "REPS",
+      "targetTable" : "QUOTES",
+      "mappings" : [ {
+        "sourceColumn" : "ID",
+        "targetColumn" : "REP_ID"
+      } ],
+      "primary" : false,
+      "virtual" : false
+    } ],
+    "constraints" : null
+  }, {
+    "name" : "LEADS",
+    "oldName" : null,
+    "entityName" : null,
+    "type" : "TABLE",
+    "schema" : "PUBLIC",
+    "catalog" : "PUBLIC",
+    "columns" : [ {
+      "name" : "ID",
+      "oldName" : "ID",
+      "fieldName" : "id",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "identity",
+      "sequenceName" : null
+    }, {
+      "name" : "CUSTOMER_ID",
+      "oldName" : "CUSTOMER_ID",
+      "fieldName" : "customers",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null
+    }, {
+      "name" : "ENTRY_DATE",
+      "oldName" : "ENTRY_DATE",
+      "fieldName" : "entryDate",
+      "sqlType" : "date",
+      "javaType" : "date",
+      "length" : 10,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : null,
+      "sequenceName" : null
+    } ],
+    "primaryKey" : {
+      "name" : "GENERATED_PK_LEADS_ID",
+      "virtual" : false,
+      "columns" : [ "ID" ]
+    },
+    "relations" : [ {
+      "name" : "GENERATED_FK_CUSTOMERS_TO_LEADS_CUSTOMER_ID",
+      "fieldName" : "LEADS_1",
+      "cardinality" : "ManyToOne",
+      "sourceTable" : "LEADS",
+      "targetTable" : "CUSTOMERS",
+      "mappings" : [ {
+        "sourceColumn" : "CUSTOMER_ID",
+        "targetColumn" : "ID"
+      } ],
+      "primary" : true,
+      "virtual" : false
+    }, {
+      "name" : "GENERATED_FK_QUOTES_TO_LEADS_LEAD_ID",
+      "fieldName" : null,
+      "cardinality" : "OneToMany",
+      "sourceTable" : "LEADS",
+      "targetTable" : "QUOTES",
+      "mappings" : [ {
+        "sourceColumn" : "ID",
+        "targetColumn" : "LEAD_ID"
+      } ],
+      "primary" : false,
+      "virtual" : false
+    } ],
+    "constraints" : null
+  } ]
+}
