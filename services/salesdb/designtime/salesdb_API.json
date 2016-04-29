@@ -9,64 +9,76 @@
   },
   "basePath" : "/",
   "tags" : [ {
-    "name" : "ChannelsController",
-    "description" : "Exposes APIs to work with Channels resource.",
-    "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.controller.ChannelsController",
-    "x-WM-VERSION" : ""
-  }, {
-    "name" : "TasksController",
-    "description" : "Exposes APIs to work with Tasks resource.",
-    "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.controller.TasksController",
-    "x-WM-VERSION" : ""
-  }, {
-    "name" : "RepsController",
-    "description" : "Exposes APIs to work with Reps resource.",
-    "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.controller.RepsController",
+    "name" : "QuotesController",
+    "description" : "Exposes APIs to work with Quotes resource.",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.controller.QuotesController",
+    "x-WM-CONTROLLER_NAME" : "Quotes",
     "x-WM-VERSION" : ""
   }, {
     "name" : "FollowUpsController",
     "description" : "Exposes APIs to work with FollowUps resource.",
     "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.controller.FollowUpsController",
-    "x-WM-VERSION" : ""
-  }, {
-    "name" : "SalesController",
-    "description" : "Exposes APIs to work with Sales resource.",
-    "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.controller.SalesController",
-    "x-WM-VERSION" : ""
-  }, {
-    "name" : "ProcedureExecutionController",
-    "description" : "Controller class for procedure execution",
-    "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.testsalesvision.salesdb.controller.ProcedureExecutionController",
-    "x-WM-VERSION" : ""
-  }, {
-    "name" : "LeadsController",
-    "description" : "Exposes APIs to work with Leads resource.",
-    "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.controller.LeadsController",
-    "x-WM-VERSION" : ""
-  }, {
-    "name" : "ProductsController",
-    "description" : "Exposes APIs to work with Products resource.",
-    "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.controller.ProductsController",
-    "x-WM-VERSION" : ""
-  }, {
-    "name" : "QuotesController",
-    "description" : "Exposes APIs to work with Quotes resource.",
-    "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.controller.QuotesController",
+    "x-WM-CONTROLLER_NAME" : "FollowUps",
     "x-WM-VERSION" : ""
   }, {
     "name" : "QueryExecutionController",
     "description" : "Controller class for query execution",
-    "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.testsalesvision.salesdb.controller.QueryExecutionController",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.controller.QueryExecutionController",
+    "x-WM-CONTROLLER_NAME" : "QueryExecution",
+    "x-WM-VERSION" : ""
+  }, {
+    "name" : "RepsController",
+    "description" : "Exposes APIs to work with Reps resource.",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.controller.RepsController",
+    "x-WM-CONTROLLER_NAME" : "Reps",
     "x-WM-VERSION" : ""
   }, {
     "name" : "StatesController",
     "description" : "Exposes APIs to work with States resource.",
     "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.controller.StatesController",
+    "x-WM-CONTROLLER_NAME" : "States",
+    "x-WM-VERSION" : ""
+  }, {
+    "name" : "SalesController",
+    "description" : "Exposes APIs to work with Sales resource.",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.controller.SalesController",
+    "x-WM-CONTROLLER_NAME" : "Sales",
     "x-WM-VERSION" : ""
   }, {
     "name" : "CustomersController",
     "description" : "Exposes APIs to work with Customers resource.",
     "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.controller.CustomersController",
+    "x-WM-CONTROLLER_NAME" : "Customers",
+    "x-WM-VERSION" : ""
+  }, {
+    "name" : "ProcedureExecutionController",
+    "description" : "Controller class for procedure execution",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.controller.ProcedureExecutionController",
+    "x-WM-CONTROLLER_NAME" : "ProcedureExecution",
+    "x-WM-VERSION" : ""
+  }, {
+    "name" : "TasksController",
+    "description" : "Exposes APIs to work with Tasks resource.",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.controller.TasksController",
+    "x-WM-CONTROLLER_NAME" : "Tasks",
+    "x-WM-VERSION" : ""
+  }, {
+    "name" : "ChannelsController",
+    "description" : "Exposes APIs to work with Channels resource.",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.controller.ChannelsController",
+    "x-WM-CONTROLLER_NAME" : "Channels",
+    "x-WM-VERSION" : ""
+  }, {
+    "name" : "LeadsController",
+    "description" : "Exposes APIs to work with Leads resource.",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.controller.LeadsController",
+    "x-WM-CONTROLLER_NAME" : "Leads",
+    "x-WM-VERSION" : ""
+  }, {
+    "name" : "ProductsController",
+    "description" : "Exposes APIs to work with Products resource.",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.controller.ProductsController",
+    "x-WM-CONTROLLER_NAME" : "Products",
     "x-WM-VERSION" : ""
   } ],
   "schemes" : [ "https", "http" ],
@@ -81,7 +93,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -90,7 +101,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -112,9 +123,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "eac6498c-c18c-4a72-a9dc-ffda832b3e82",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "getChannelss"
+        "x-WM-OPERATION_UID" : "1558ee54-36cf-4cf4-b8cd-99035acaedc8",
+        "x-WM-METHOD_NAME" : "getChannelss",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "post" : {
         "tags" : [ "ChannelsController" ],
@@ -129,7 +140,7 @@
             "x-WM-TYPE_ARGUMENTS" : [ ]
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.salesdb.Channels",
-          "x-WM-UUID" : "cf52c9d4-d694-477f-9bd7-bc2c57a9d705",
+          "x-WM-UUID" : "e741b821-9d27-4e0f-8e16-b631ff8a2641",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -141,14 +152,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "796501e9-44b2-435d-9c2c-61a0acc03d6f",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "createChannels"
+        "x-WM-OPERATION_UID" : "dcdb98b3-359b-40ec-9ece-1921e8a28608",
+        "x-WM-METHOD_NAME" : "createChannels",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Channels",
       "x-WM-TAG" : "ChannelsController",
-      "x-WM-RELATIVE_PATH" : "/",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Channels/"
+      "x-WM-BASE_PATH" : "/salesdb/Channels",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Channels/",
+      "x-WM-RELATIVE_PATH" : "/"
     },
     "/salesdb/Channels/count" : {
       "get" : {
@@ -164,14 +175,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "70dc4cad-8420-4b3e-b61c-ab21a00315ba",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "countAll"
+        "x-WM-OPERATION_UID" : "bb4e6e93-2c79-45e4-9db1-8f01e0687c72",
+        "x-WM-METHOD_NAME" : "countAll",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Channels",
       "x-WM-TAG" : "ChannelsController",
-      "x-WM-RELATIVE_PATH" : "/count",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Channels/count"
+      "x-WM-BASE_PATH" : "/salesdb/Channels",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Channels/count",
+      "x-WM-RELATIVE_PATH" : "/count"
     },
     "/salesdb/Channels/search" : {
       "post" : {
@@ -183,7 +194,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -192,7 +202,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -214,7 +224,7 @@
             "x-WM-IS_LIST" : false
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.expression.QueryFilter",
-          "x-WM-UUID" : "e6818239-dc99-464e-8d7d-cb5fa2e4ca69",
+          "x-WM-UUID" : "df365264-49c0-407e-9851-3857281ffd72",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -229,16 +239,16 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "9c6a8ea7-c9ec-4ef4-99fd-a47671b739ec",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "findAll"
+        "x-WM-OPERATION_UID" : "be0263d4-0ffb-44a1-9d42-a18d1537225c",
+        "x-WM-METHOD_NAME" : "findAll",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Channels",
       "x-WM-TAG" : "ChannelsController",
-      "x-WM-RELATIVE_PATH" : "/search",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Channels/search"
+      "x-WM-BASE_PATH" : "/salesdb/Channels",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Channels/search",
+      "x-WM-RELATIVE_PATH" : "/search"
     },
-    "/salesdb/Channels/{id:.+}" : {
+    "/salesdb/Channels/{id}" : {
       "get" : {
         "tags" : [ "ChannelsController" ],
         "description" : "Returns the Channels instance associated with the given id.",
@@ -248,10 +258,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "a5121b0b-b69f-4fc4-ac3b-40f87b540139",
+          "x-WM-UUID" : "71affe5a-6c39-41c9-9165-f27ae45f9bc8",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -263,9 +272,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "7d42b249-85ca-4ab5-a5be-281c69bb765f",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "getChannels"
+        "x-WM-OPERATION_UID" : "2b560bfe-d368-427f-8390-c7a824cfab26",
+        "x-WM-METHOD_NAME" : "getChannels",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "put" : {
         "tags" : [ "ChannelsController" ],
@@ -276,10 +285,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "0fb31e3f-475f-4a94-8d55-3d2e71924da3",
+          "x-WM-UUID" : "17a2d23e-ae2f-46a1-8e71-556a39940ec2",
           "x-WM-EDITABLE" : true
         }, {
           "in" : "body",
@@ -290,7 +298,7 @@
             "x-WM-TYPE_ARGUMENTS" : [ ]
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.salesdb.Channels",
-          "x-WM-UUID" : "86bd978d-b908-4f2f-9947-9403caa6e14b",
+          "x-WM-UUID" : "02ce7fb1-72d1-446f-82cd-d4e60d31b655",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -302,9 +310,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "e2cecba8-cbc9-4789-b5be-0d2c2094dec9",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "editChannels"
+        "x-WM-OPERATION_UID" : "66a6dd53-fe2f-40c8-adfd-285e1b9f1b11",
+        "x-WM-METHOD_NAME" : "editChannels",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "delete" : {
         "tags" : [ "ChannelsController" ],
@@ -315,10 +323,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "11fcff79-9128-424d-ba5f-7b07ffc61c46",
+          "x-WM-UUID" : "58072908-52ef-41b7-bb94-64a542eddd89",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -329,16 +336,16 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "e50a3d6c-84b1-40c4-ab39-678658aadc6d",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "delete"
+        "x-WM-OPERATION_UID" : "15de8828-7000-4874-8d03-b668de857633",
+        "x-WM-METHOD_NAME" : "delete",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Channels",
       "x-WM-TAG" : "ChannelsController",
-      "x-WM-RELATIVE_PATH" : "/{id:.+}",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Channels/{id:.+}"
+      "x-WM-BASE_PATH" : "/salesdb/Channels",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Channels/{id}",
+      "x-WM-RELATIVE_PATH" : "/{id}"
     },
-    "/salesdb/Channels/{id:.+}/repses" : {
+    "/salesdb/Channels/{id}/repses" : {
       "get" : {
         "tags" : [ "ChannelsController" ],
         "description" : "Gets the repses instance associated with the given id.",
@@ -348,7 +355,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -357,7 +363,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -371,10 +377,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "bdef73d3-9c21-412e-b438-0ae7086db109",
+          "x-WM-UUID" : "9ac7abc7-32f6-491e-b765-b4953fb2b777",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -389,14 +394,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "9383bc74-e95e-467e-8bf3-fb583ecf7048",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "findAssociatedrepses"
+        "x-WM-OPERATION_UID" : "14f8fd31-c4be-4a43-8069-b7945ec92c91",
+        "x-WM-METHOD_NAME" : "findAssociatedrepses",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Channels",
       "x-WM-TAG" : "ChannelsController",
-      "x-WM-RELATIVE_PATH" : "/{id:.+}/repses",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Channels/{id:.+}/repses"
+      "x-WM-BASE_PATH" : "/salesdb/Channels",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Channels/{id}/repses",
+      "x-WM-RELATIVE_PATH" : "/{id}/repses"
     },
     "/salesdb/Customers/" : {
       "get" : {
@@ -408,7 +413,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -417,7 +421,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -439,9 +443,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "f325053e-e5ad-4fac-a852-0fe503aa3d40",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "getCustomerss"
+        "x-WM-OPERATION_UID" : "679341d0-6886-4d98-814d-f47dbc5a9393",
+        "x-WM-METHOD_NAME" : "getCustomerss",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "post" : {
         "tags" : [ "CustomersController" ],
@@ -456,7 +460,7 @@
             "x-WM-TYPE_ARGUMENTS" : [ ]
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.salesdb.Customers",
-          "x-WM-UUID" : "2548a144-22a6-408b-b081-6b47dd3da199",
+          "x-WM-UUID" : "d61cb05f-36c7-44b2-8854-7ca650789730",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -468,14 +472,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "a3a28b5d-804d-41f8-baf7-c15cd9eb98ea",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "createCustomers"
+        "x-WM-OPERATION_UID" : "534783be-fec2-4129-8fbc-64187157459c",
+        "x-WM-METHOD_NAME" : "createCustomers",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Customers",
       "x-WM-TAG" : "CustomersController",
-      "x-WM-RELATIVE_PATH" : "/",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Customers/"
+      "x-WM-BASE_PATH" : "/salesdb/Customers",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Customers/",
+      "x-WM-RELATIVE_PATH" : "/"
     },
     "/salesdb/Customers/count" : {
       "get" : {
@@ -491,14 +495,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "4ec1bac0-bac6-4465-aa93-8b3457265fc8",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "countAll"
+        "x-WM-OPERATION_UID" : "5ec6ae62-7cc8-412e-be2e-1e24f0d7ec42",
+        "x-WM-METHOD_NAME" : "countAll",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Customers",
       "x-WM-TAG" : "CustomersController",
-      "x-WM-RELATIVE_PATH" : "/count",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Customers/count"
+      "x-WM-BASE_PATH" : "/salesdb/Customers",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Customers/count",
+      "x-WM-RELATIVE_PATH" : "/count"
     },
     "/salesdb/Customers/search" : {
       "post" : {
@@ -510,7 +514,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -519,7 +522,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -541,7 +544,7 @@
             "x-WM-IS_LIST" : false
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.expression.QueryFilter",
-          "x-WM-UUID" : "fc0203c0-e19d-4e60-8ca5-064c04c84874",
+          "x-WM-UUID" : "0ca7242f-ad84-40e2-bbe1-de5e6e6c448e",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -556,16 +559,16 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "710f28f9-290a-459a-b3fa-1423aa7fe461",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "findAll"
+        "x-WM-OPERATION_UID" : "1fda728a-b0b8-41be-a71f-357bb9fb0536",
+        "x-WM-METHOD_NAME" : "findAll",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Customers",
       "x-WM-TAG" : "CustomersController",
-      "x-WM-RELATIVE_PATH" : "/search",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Customers/search"
+      "x-WM-BASE_PATH" : "/salesdb/Customers",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Customers/search",
+      "x-WM-RELATIVE_PATH" : "/search"
     },
-    "/salesdb/Customers/{id:.+}" : {
+    "/salesdb/Customers/{id}" : {
       "get" : {
         "tags" : [ "CustomersController" ],
         "description" : "Returns the Customers instance associated with the given id.",
@@ -575,10 +578,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "da221cfb-f9e6-4965-8d4b-89a551a8764f",
+          "x-WM-UUID" : "e455d0de-5d7f-4c63-b223-fddba497fc8b",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -590,9 +592,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "c80b15dd-cc5b-48af-9358-e12a4ee31302",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "getCustomers"
+        "x-WM-OPERATION_UID" : "6a812eb2-dc22-4828-babf-538c1b6c4fbc",
+        "x-WM-METHOD_NAME" : "getCustomers",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "put" : {
         "tags" : [ "CustomersController" ],
@@ -603,10 +605,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "b65dfec6-9eb7-49f6-b5e3-e5b014502c17",
+          "x-WM-UUID" : "0a2131f5-a0ab-4e58-be97-1f03469f1c97",
           "x-WM-EDITABLE" : true
         }, {
           "in" : "body",
@@ -617,7 +618,7 @@
             "x-WM-TYPE_ARGUMENTS" : [ ]
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.salesdb.Customers",
-          "x-WM-UUID" : "4f380dab-b76f-4f54-823a-4e382ea9ee14",
+          "x-WM-UUID" : "e63fd2ff-d3c3-4f2c-a013-bc3c3ca95dc6",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -629,9 +630,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "2d5118f1-02aa-4791-87a6-d625e13cadec",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "editCustomers"
+        "x-WM-OPERATION_UID" : "4b91842d-297e-4865-bc72-e00772a67ea4",
+        "x-WM-METHOD_NAME" : "editCustomers",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "delete" : {
         "tags" : [ "CustomersController" ],
@@ -642,10 +643,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "0c4ecad7-2f58-4bb2-99ef-4f42663af518",
+          "x-WM-UUID" : "49780f41-26aa-4c44-a6b2-ef7f569be183",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -656,16 +656,16 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "7e0a4b33-8119-4d81-b12c-9b7d76653569",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "delete"
+        "x-WM-OPERATION_UID" : "049d6f65-ea04-4544-b6da-2861e36418e0",
+        "x-WM-METHOD_NAME" : "delete",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Customers",
       "x-WM-TAG" : "CustomersController",
-      "x-WM-RELATIVE_PATH" : "/{id:.+}",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Customers/{id:.+}"
+      "x-WM-BASE_PATH" : "/salesdb/Customers",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Customers/{id}",
+      "x-WM-RELATIVE_PATH" : "/{id}"
     },
-    "/salesdb/Customers/{id:.+}/leadses" : {
+    "/salesdb/Customers/{id}/leadses" : {
       "get" : {
         "tags" : [ "CustomersController" ],
         "description" : "Gets the leadses instance associated with the given id.",
@@ -675,7 +675,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -684,7 +683,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -698,10 +697,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "203a45d1-e736-4df8-a583-9f8a289c515b",
+          "x-WM-UUID" : "bdb35e6e-cdfd-4c8f-af22-3b844f2b795b",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -716,14 +714,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "732ff80a-b343-43e7-9e59-79173bf49c5e",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "findAssociatedleadses"
+        "x-WM-OPERATION_UID" : "eafbba9d-ca1f-4bbe-8f8c-cba687597e62",
+        "x-WM-METHOD_NAME" : "findAssociatedleadses",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Customers",
       "x-WM-TAG" : "CustomersController",
-      "x-WM-RELATIVE_PATH" : "/{id:.+}/leadses",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Customers/{id:.+}/leadses"
+      "x-WM-BASE_PATH" : "/salesdb/Customers",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Customers/{id}/leadses",
+      "x-WM-RELATIVE_PATH" : "/{id}/leadses"
     },
     "/salesdb/FollowUps/" : {
       "get" : {
@@ -735,7 +733,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -744,7 +741,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -766,9 +763,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "250f5dd1-4e12-4424-b9e9-eb7816f0ce7b",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "getFollowUpss"
+        "x-WM-OPERATION_UID" : "8ccbd7cc-81f3-4d76-b6b6-c6ad788a2298",
+        "x-WM-METHOD_NAME" : "getFollowUpss",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "post" : {
         "tags" : [ "FollowUpsController" ],
@@ -783,7 +780,7 @@
             "x-WM-TYPE_ARGUMENTS" : [ ]
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.salesdb.FollowUps",
-          "x-WM-UUID" : "03290725-2691-468f-b821-c41f579af750",
+          "x-WM-UUID" : "99ff2b15-2848-4523-8b1d-b2a76bc5f969",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -795,14 +792,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "f59bae3d-090a-4591-9419-ab7102f740c9",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "createFollowUps"
+        "x-WM-OPERATION_UID" : "404f24ed-93a2-485d-bdb3-140e600feb05",
+        "x-WM-METHOD_NAME" : "createFollowUps",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/FollowUps",
       "x-WM-TAG" : "FollowUpsController",
-      "x-WM-RELATIVE_PATH" : "/",
-      "x-WM-COMPLETE_PATH" : "/salesdb/FollowUps/"
+      "x-WM-BASE_PATH" : "/salesdb/FollowUps",
+      "x-WM-COMPLETE_PATH" : "/salesdb/FollowUps/",
+      "x-WM-RELATIVE_PATH" : "/"
     },
     "/salesdb/FollowUps/count" : {
       "get" : {
@@ -818,14 +815,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "d47c060a-16ee-4d70-a1e5-22baf14a34fe",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "countAll"
+        "x-WM-OPERATION_UID" : "333eb7f7-22cd-4820-8bec-3470414327ae",
+        "x-WM-METHOD_NAME" : "countAll",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/FollowUps",
       "x-WM-TAG" : "FollowUpsController",
-      "x-WM-RELATIVE_PATH" : "/count",
-      "x-WM-COMPLETE_PATH" : "/salesdb/FollowUps/count"
+      "x-WM-BASE_PATH" : "/salesdb/FollowUps",
+      "x-WM-COMPLETE_PATH" : "/salesdb/FollowUps/count",
+      "x-WM-RELATIVE_PATH" : "/count"
     },
     "/salesdb/FollowUps/search" : {
       "post" : {
@@ -837,7 +834,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -846,7 +842,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -868,7 +864,7 @@
             "x-WM-IS_LIST" : false
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.expression.QueryFilter",
-          "x-WM-UUID" : "d6534e69-d746-44b7-8051-7eae8cf4e7ee",
+          "x-WM-UUID" : "2da5c7ca-b38e-4fa4-8328-0aa9e6102b66",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -883,16 +879,16 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "bef15294-a1ca-467c-831a-ec0e049852e2",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "findAll"
+        "x-WM-OPERATION_UID" : "71d11c76-e300-4f0b-a13c-ec9a080f1348",
+        "x-WM-METHOD_NAME" : "findAll",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/FollowUps",
       "x-WM-TAG" : "FollowUpsController",
-      "x-WM-RELATIVE_PATH" : "/search",
-      "x-WM-COMPLETE_PATH" : "/salesdb/FollowUps/search"
+      "x-WM-BASE_PATH" : "/salesdb/FollowUps",
+      "x-WM-COMPLETE_PATH" : "/salesdb/FollowUps/search",
+      "x-WM-RELATIVE_PATH" : "/search"
     },
-    "/salesdb/FollowUps/{id:.+}" : {
+    "/salesdb/FollowUps/{id}" : {
       "get" : {
         "tags" : [ "FollowUpsController" ],
         "description" : "Returns the FollowUps instance associated with the given id.",
@@ -902,10 +898,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "76d1a541-c30c-4bf6-a597-95a4d3b35021",
+          "x-WM-UUID" : "cad6b909-cbf4-4c7f-8577-5e82ed226266",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -917,9 +912,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "fb77d627-ec6f-49ad-a227-99e8d6907f79",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "getFollowUps"
+        "x-WM-OPERATION_UID" : "cb84738d-aa60-4061-b652-ca71655af4d1",
+        "x-WM-METHOD_NAME" : "getFollowUps",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "put" : {
         "tags" : [ "FollowUpsController" ],
@@ -930,10 +925,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "a095b2ae-ee40-4e3f-ac14-d90c2cc8115d",
+          "x-WM-UUID" : "6c5166e8-acd8-4bf5-a4f5-5ceb43248369",
           "x-WM-EDITABLE" : true
         }, {
           "in" : "body",
@@ -944,7 +938,7 @@
             "x-WM-TYPE_ARGUMENTS" : [ ]
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.salesdb.FollowUps",
-          "x-WM-UUID" : "1a9b414e-5181-4747-96f2-5fee03c57b1e",
+          "x-WM-UUID" : "d463e5e7-188d-4f3d-bd1d-20ee616fe3d9",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -956,9 +950,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "f4d3d477-39eb-44eb-a1ea-6ea7345d9680",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "editFollowUps"
+        "x-WM-OPERATION_UID" : "9b7647c0-5f2f-4256-bf73-b027a95d6a6c",
+        "x-WM-METHOD_NAME" : "editFollowUps",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "delete" : {
         "tags" : [ "FollowUpsController" ],
@@ -969,10 +963,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "8529bbbb-e7bc-4505-8c8b-4b4ed1dcd3e2",
+          "x-WM-UUID" : "b68485bd-c062-4b75-b867-95376504515c",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -983,14 +976,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "c5ef003b-58a5-4c0c-8cb7-f152e03c2792",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "delete"
+        "x-WM-OPERATION_UID" : "9e7ab04c-1fc7-4705-befc-1241157551e2",
+        "x-WM-METHOD_NAME" : "delete",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/FollowUps",
       "x-WM-TAG" : "FollowUpsController",
-      "x-WM-RELATIVE_PATH" : "/{id:.+}",
-      "x-WM-COMPLETE_PATH" : "/salesdb/FollowUps/{id:.+}"
+      "x-WM-BASE_PATH" : "/salesdb/FollowUps",
+      "x-WM-COMPLETE_PATH" : "/salesdb/FollowUps/{id}",
+      "x-WM-RELATIVE_PATH" : "/{id}"
     },
     "/salesdb/Leads/" : {
       "get" : {
@@ -1002,7 +995,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -1011,7 +1003,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -1033,9 +1025,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "ee26675c-50b8-45ec-a74e-dbf741c09d9c",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "getLeadss"
+        "x-WM-OPERATION_UID" : "58de6005-c4c2-411a-90d0-adc9ccf36745",
+        "x-WM-METHOD_NAME" : "getLeadss",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "post" : {
         "tags" : [ "LeadsController" ],
@@ -1050,7 +1042,7 @@
             "x-WM-TYPE_ARGUMENTS" : [ ]
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.salesdb.Leads",
-          "x-WM-UUID" : "02bdb619-9f2f-4c4c-b9ca-89269a09e179",
+          "x-WM-UUID" : "5edd0e7f-6e6b-4d31-a928-a0abbef74605",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -1062,14 +1054,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "114aaa21-452a-4f7e-acb3-bf31da76e7ca",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "createLeads"
+        "x-WM-OPERATION_UID" : "b6de7399-5b76-4338-963c-a60fbd0090b7",
+        "x-WM-METHOD_NAME" : "createLeads",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Leads",
       "x-WM-TAG" : "LeadsController",
-      "x-WM-RELATIVE_PATH" : "/",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Leads/"
+      "x-WM-BASE_PATH" : "/salesdb/Leads",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Leads/",
+      "x-WM-RELATIVE_PATH" : "/"
     },
     "/salesdb/Leads/count" : {
       "get" : {
@@ -1085,14 +1077,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "1a16228f-2ea4-4fe4-b4d4-71f125785d16",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "countAll"
+        "x-WM-OPERATION_UID" : "837c201d-809e-457e-b665-b95eda725c9c",
+        "x-WM-METHOD_NAME" : "countAll",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Leads",
       "x-WM-TAG" : "LeadsController",
-      "x-WM-RELATIVE_PATH" : "/count",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Leads/count"
+      "x-WM-BASE_PATH" : "/salesdb/Leads",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Leads/count",
+      "x-WM-RELATIVE_PATH" : "/count"
     },
     "/salesdb/Leads/search" : {
       "post" : {
@@ -1104,7 +1096,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -1113,7 +1104,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -1135,7 +1126,7 @@
             "x-WM-IS_LIST" : false
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.expression.QueryFilter",
-          "x-WM-UUID" : "3985cb6f-2ea1-4a44-865d-29c3faa14692",
+          "x-WM-UUID" : "908fa0a7-a824-40e9-9b8f-f31faaa984e6",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -1150,16 +1141,16 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "9de7b2d1-8d05-4835-b1d6-0a43286858fa",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "findAll"
+        "x-WM-OPERATION_UID" : "f24ca799-083b-4df5-8f0e-366ddde18bdd",
+        "x-WM-METHOD_NAME" : "findAll",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Leads",
       "x-WM-TAG" : "LeadsController",
-      "x-WM-RELATIVE_PATH" : "/search",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Leads/search"
+      "x-WM-BASE_PATH" : "/salesdb/Leads",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Leads/search",
+      "x-WM-RELATIVE_PATH" : "/search"
     },
-    "/salesdb/Leads/{id:.+}" : {
+    "/salesdb/Leads/{id}" : {
       "get" : {
         "tags" : [ "LeadsController" ],
         "description" : "Returns the Leads instance associated with the given id.",
@@ -1169,10 +1160,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "0c17add6-c78f-4c27-bfe3-45dc7ef06fcf",
+          "x-WM-UUID" : "d95e67a5-1bbe-4fd8-b36e-5349234d229e",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -1184,9 +1174,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "c99ad488-20a4-4383-bafb-67c1da17572e",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "getLeads"
+        "x-WM-OPERATION_UID" : "8e47a74c-48de-4296-bdfb-4369a4811287",
+        "x-WM-METHOD_NAME" : "getLeads",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "put" : {
         "tags" : [ "LeadsController" ],
@@ -1197,10 +1187,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "707b955c-64cb-4658-a6fa-a6d69a5a37f8",
+          "x-WM-UUID" : "90d9c767-4504-4a68-81fa-88c90045d49d",
           "x-WM-EDITABLE" : true
         }, {
           "in" : "body",
@@ -1211,7 +1200,7 @@
             "x-WM-TYPE_ARGUMENTS" : [ ]
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.salesdb.Leads",
-          "x-WM-UUID" : "5ee0b19b-bf97-4f5d-bb9f-7c2563eaae25",
+          "x-WM-UUID" : "72f4d5bd-e203-4fac-8e81-8b8bcaa8bae9",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -1223,9 +1212,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "7a3a8265-c1e6-408d-b1e9-b6306e94384c",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "editLeads"
+        "x-WM-OPERATION_UID" : "6a075571-5b48-430f-b55f-8b52d4af3adb",
+        "x-WM-METHOD_NAME" : "editLeads",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "delete" : {
         "tags" : [ "LeadsController" ],
@@ -1236,10 +1225,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "7f6d8b8c-9021-431f-8d14-cc25a50f6680",
+          "x-WM-UUID" : "6feecc4f-a4d9-4c11-bf3e-ab56c8b6044f",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -1250,16 +1238,16 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "b02b3ecf-37d5-4738-985e-4ebf565a7a76",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "delete"
+        "x-WM-OPERATION_UID" : "f38c1016-a4c4-4b62-ab70-c121f9736367",
+        "x-WM-METHOD_NAME" : "delete",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Leads",
       "x-WM-TAG" : "LeadsController",
-      "x-WM-RELATIVE_PATH" : "/{id:.+}",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Leads/{id:.+}"
+      "x-WM-BASE_PATH" : "/salesdb/Leads",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Leads/{id}",
+      "x-WM-RELATIVE_PATH" : "/{id}"
     },
-    "/salesdb/Leads/{id:.+}/quoteses" : {
+    "/salesdb/Leads/{id}/quoteses" : {
       "get" : {
         "tags" : [ "LeadsController" ],
         "description" : "Gets the quoteses instance associated with the given id.",
@@ -1269,7 +1257,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -1278,7 +1265,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -1292,10 +1279,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "d47e1db4-7f8a-4c45-9f66-3c46899fbe6f",
+          "x-WM-UUID" : "2c76b7a2-8881-466c-88c9-f3a33ea643c0",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -1310,14 +1296,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "b2696236-9553-469a-b986-26ec7dd66871",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "findAssociatedquoteses"
+        "x-WM-OPERATION_UID" : "28157822-47dc-4400-a21f-d062c7b51a50",
+        "x-WM-METHOD_NAME" : "findAssociatedquoteses",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Leads",
       "x-WM-TAG" : "LeadsController",
-      "x-WM-RELATIVE_PATH" : "/{id:.+}/quoteses",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Leads/{id:.+}/quoteses"
+      "x-WM-BASE_PATH" : "/salesdb/Leads",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Leads/{id}/quoteses",
+      "x-WM-RELATIVE_PATH" : "/{id}/quoteses"
     },
     "/salesdb/Products/" : {
       "get" : {
@@ -1329,7 +1315,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -1338,7 +1323,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -1360,9 +1345,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "7fb240cc-b6b8-4564-9790-966b4be9c3c7",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "getProductss"
+        "x-WM-OPERATION_UID" : "2aadb997-c204-4f39-a126-34da8df1ff1a",
+        "x-WM-METHOD_NAME" : "getProductss",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "post" : {
         "tags" : [ "ProductsController" ],
@@ -1377,7 +1362,7 @@
             "x-WM-TYPE_ARGUMENTS" : [ ]
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.salesdb.Products",
-          "x-WM-UUID" : "030887ed-c077-4dd8-bcaa-241dbf714759",
+          "x-WM-UUID" : "dc5a41b8-0fc5-4e88-8431-62376271323f",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -1389,14 +1374,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "f857c5d7-3888-438d-8fa3-ed0ba0ab0ecc",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "createProducts"
+        "x-WM-OPERATION_UID" : "d0723737-bab8-4e9b-99ae-9fd30c0a2491",
+        "x-WM-METHOD_NAME" : "createProducts",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Products",
       "x-WM-TAG" : "ProductsController",
-      "x-WM-RELATIVE_PATH" : "/",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Products/"
+      "x-WM-BASE_PATH" : "/salesdb/Products",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Products/",
+      "x-WM-RELATIVE_PATH" : "/"
     },
     "/salesdb/Products/count" : {
       "get" : {
@@ -1412,14 +1397,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "a36952d0-cf10-4422-8d5c-88bf67168b0c",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "countAll"
+        "x-WM-OPERATION_UID" : "c073a999-991b-44e5-b039-8fd64209f04b",
+        "x-WM-METHOD_NAME" : "countAll",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Products",
       "x-WM-TAG" : "ProductsController",
-      "x-WM-RELATIVE_PATH" : "/count",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Products/count"
+      "x-WM-BASE_PATH" : "/salesdb/Products",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Products/count",
+      "x-WM-RELATIVE_PATH" : "/count"
     },
     "/salesdb/Products/search" : {
       "post" : {
@@ -1431,7 +1416,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -1440,7 +1424,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -1462,7 +1446,7 @@
             "x-WM-IS_LIST" : false
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.expression.QueryFilter",
-          "x-WM-UUID" : "ab10e6f9-2665-4c16-ae2e-409f9e397e36",
+          "x-WM-UUID" : "da039000-a1e3-4e78-83e7-dc686a1404c9",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -1477,16 +1461,16 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "f04f9f17-744f-40f4-9a5a-4119a48109cc",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "findAll"
+        "x-WM-OPERATION_UID" : "8eeff3f7-6246-4f4c-b7bd-4c9c2c2fb279",
+        "x-WM-METHOD_NAME" : "findAll",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Products",
       "x-WM-TAG" : "ProductsController",
-      "x-WM-RELATIVE_PATH" : "/search",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Products/search"
+      "x-WM-BASE_PATH" : "/salesdb/Products",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Products/search",
+      "x-WM-RELATIVE_PATH" : "/search"
     },
-    "/salesdb/Products/{id:.+}" : {
+    "/salesdb/Products/{id}" : {
       "get" : {
         "tags" : [ "ProductsController" ],
         "description" : "Returns the Products instance associated with the given id.",
@@ -1496,10 +1480,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "b24b994c-50c5-4404-8178-bcf816f05b0e",
+          "x-WM-UUID" : "fad874a8-002c-4555-a9d7-cf83dcfec92e",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -1511,9 +1494,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "02b80260-7c76-44c5-a2e6-ad1a3d4498ee",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "getProducts"
+        "x-WM-OPERATION_UID" : "57f3fa82-c297-4c4c-b963-ad8b11be49ba",
+        "x-WM-METHOD_NAME" : "getProducts",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "put" : {
         "tags" : [ "ProductsController" ],
@@ -1524,10 +1507,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "b29feb9f-7e20-4a4e-aa7b-2477177f3195",
+          "x-WM-UUID" : "099d29a2-0793-4f96-ad03-62e45d94a4c0",
           "x-WM-EDITABLE" : true
         }, {
           "in" : "body",
@@ -1538,7 +1520,7 @@
             "x-WM-TYPE_ARGUMENTS" : [ ]
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.salesdb.Products",
-          "x-WM-UUID" : "51b21482-79fc-45b6-85a9-25458d226ddb",
+          "x-WM-UUID" : "bd9eb0ab-9a7c-4bc3-8db4-6748f24af450",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -1550,9 +1532,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "58c61f5f-22c0-4392-9b89-2e8ebb73adcf",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "editProducts"
+        "x-WM-OPERATION_UID" : "b305a132-536e-457b-93af-9aedb7315aa2",
+        "x-WM-METHOD_NAME" : "editProducts",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "delete" : {
         "tags" : [ "ProductsController" ],
@@ -1563,10 +1545,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "d00faeb0-0921-4ec9-ae7f-f5767096a79a",
+          "x-WM-UUID" : "aa7b2d4a-4653-4410-aad7-7b5a32a8ebc4",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -1577,16 +1558,16 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "a504dad8-cfbc-4e30-a5b7-466d6a9b208e",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "delete"
+        "x-WM-OPERATION_UID" : "1970c6a8-20c9-4326-a7e8-583118dda05c",
+        "x-WM-METHOD_NAME" : "delete",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Products",
       "x-WM-TAG" : "ProductsController",
-      "x-WM-RELATIVE_PATH" : "/{id:.+}",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Products/{id:.+}"
+      "x-WM-BASE_PATH" : "/salesdb/Products",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Products/{id}",
+      "x-WM-RELATIVE_PATH" : "/{id}"
     },
-    "/salesdb/Products/{id:.+}/saleses" : {
+    "/salesdb/Products/{id}/saleses" : {
       "get" : {
         "tags" : [ "ProductsController" ],
         "description" : "Gets the saleses instance associated with the given id.",
@@ -1596,7 +1577,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -1605,7 +1585,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -1619,10 +1599,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "facbc003-b1e1-4159-a94f-c425ef77fe35",
+          "x-WM-UUID" : "8833a295-aec0-4041-beec-2f2577e17612",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -1637,14 +1616,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "c42ed5a3-b374-4a51-b9cf-98d54d9ddac1",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "findAssociatedsaleses"
+        "x-WM-OPERATION_UID" : "f0ee25ec-b39c-46cf-bd45-3afc73db5fdc",
+        "x-WM-METHOD_NAME" : "findAssociatedsaleses",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Products",
       "x-WM-TAG" : "ProductsController",
-      "x-WM-RELATIVE_PATH" : "/{id:.+}/saleses",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Products/{id:.+}/saleses"
+      "x-WM-BASE_PATH" : "/salesdb/Products",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Products/{id}/saleses",
+      "x-WM-RELATIVE_PATH" : "/{id}/saleses"
     },
     "/salesdb/Quotes/" : {
       "get" : {
@@ -1656,7 +1635,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -1665,7 +1643,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -1687,9 +1665,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "cfa37df2-b313-451f-9d5c-67288f3fdc7d",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "getQuotess"
+        "x-WM-OPERATION_UID" : "295ba80a-eb10-42ef-b05d-ee05084e6182",
+        "x-WM-METHOD_NAME" : "getQuotess",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "post" : {
         "tags" : [ "QuotesController" ],
@@ -1704,7 +1682,7 @@
             "x-WM-TYPE_ARGUMENTS" : [ ]
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.salesdb.Quotes",
-          "x-WM-UUID" : "4f753931-3c04-4b07-b26d-81b5804e60da",
+          "x-WM-UUID" : "6b164dc9-82e3-4492-ba92-bbc77224e9ce",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -1716,14 +1694,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "f5b06441-6910-493e-86d7-687685daa69c",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "createQuotes"
+        "x-WM-OPERATION_UID" : "20930ad4-b356-4570-bfe9-45cfc51d72bb",
+        "x-WM-METHOD_NAME" : "createQuotes",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Quotes",
       "x-WM-TAG" : "QuotesController",
-      "x-WM-RELATIVE_PATH" : "/",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Quotes/"
+      "x-WM-BASE_PATH" : "/salesdb/Quotes",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Quotes/",
+      "x-WM-RELATIVE_PATH" : "/"
     },
     "/salesdb/Quotes/count" : {
       "get" : {
@@ -1739,14 +1717,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "f2f066da-a3de-4740-a5f5-8a93dc69aa1e",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "countAll"
+        "x-WM-OPERATION_UID" : "778266e4-fb8d-4dd5-a5ef-85904cf31e9f",
+        "x-WM-METHOD_NAME" : "countAll",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Quotes",
       "x-WM-TAG" : "QuotesController",
-      "x-WM-RELATIVE_PATH" : "/count",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Quotes/count"
+      "x-WM-BASE_PATH" : "/salesdb/Quotes",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Quotes/count",
+      "x-WM-RELATIVE_PATH" : "/count"
     },
     "/salesdb/Quotes/search" : {
       "post" : {
@@ -1758,7 +1736,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -1767,7 +1744,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -1789,7 +1766,7 @@
             "x-WM-IS_LIST" : false
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.expression.QueryFilter",
-          "x-WM-UUID" : "25d2e6a7-1dc3-4e2a-86de-f463daa7ee35",
+          "x-WM-UUID" : "8a7a9b4a-3e47-4914-b631-d40a9ccf1286",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -1804,16 +1781,16 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "45816f7d-9604-441a-a52e-08e77f3f32e2",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "findAll"
+        "x-WM-OPERATION_UID" : "d96fd4d9-e461-4622-a868-6ac852eca8e3",
+        "x-WM-METHOD_NAME" : "findAll",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Quotes",
       "x-WM-TAG" : "QuotesController",
-      "x-WM-RELATIVE_PATH" : "/search",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Quotes/search"
+      "x-WM-BASE_PATH" : "/salesdb/Quotes",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Quotes/search",
+      "x-WM-RELATIVE_PATH" : "/search"
     },
-    "/salesdb/Quotes/{id:.+}" : {
+    "/salesdb/Quotes/{id}" : {
       "get" : {
         "tags" : [ "QuotesController" ],
         "description" : "Returns the Quotes instance associated with the given id.",
@@ -1823,10 +1800,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "8b10c226-710b-4aa9-9167-6903f62b2eec",
+          "x-WM-UUID" : "900c09ae-9ee0-46c2-8a15-aa0fcb5cac31",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -1838,9 +1814,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "e3f34dc9-d8f5-4188-a648-43ca6bd8cf2e",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "getQuotes"
+        "x-WM-OPERATION_UID" : "0e3db9f2-c71d-4e35-95be-6691584f9466",
+        "x-WM-METHOD_NAME" : "getQuotes",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "put" : {
         "tags" : [ "QuotesController" ],
@@ -1851,10 +1827,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "3f055de0-cba0-4879-aef8-05eb213baa7a",
+          "x-WM-UUID" : "4f9c6c82-1787-41e7-8d47-6d72eae3cc9a",
           "x-WM-EDITABLE" : true
         }, {
           "in" : "body",
@@ -1865,7 +1840,7 @@
             "x-WM-TYPE_ARGUMENTS" : [ ]
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.salesdb.Quotes",
-          "x-WM-UUID" : "f08cb7da-5d57-487e-9cdb-4d6371b50159",
+          "x-WM-UUID" : "2193db3f-b07c-45f6-a833-57965ace5d0a",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -1877,9 +1852,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "d7ab135e-5cd3-4a7e-a13c-29c44eb7d453",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "editQuotes"
+        "x-WM-OPERATION_UID" : "4a66b404-b760-44e1-a7fc-81415afdd3c2",
+        "x-WM-METHOD_NAME" : "editQuotes",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "delete" : {
         "tags" : [ "QuotesController" ],
@@ -1890,10 +1865,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "f8b70832-45c0-45bb-ae09-5870a560b92e",
+          "x-WM-UUID" : "84901591-9d3e-4ced-b843-1364c781be60",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -1904,16 +1878,16 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "e55787fa-5be5-4cc6-885b-ce5a1d1c35ed",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "delete"
+        "x-WM-OPERATION_UID" : "6e7f6dd5-d840-4608-88aa-9d0f1b490879",
+        "x-WM-METHOD_NAME" : "delete",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Quotes",
       "x-WM-TAG" : "QuotesController",
-      "x-WM-RELATIVE_PATH" : "/{id:.+}",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Quotes/{id:.+}"
+      "x-WM-BASE_PATH" : "/salesdb/Quotes",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Quotes/{id}",
+      "x-WM-RELATIVE_PATH" : "/{id}"
     },
-    "/salesdb/Quotes/{id:.+}/followUpses" : {
+    "/salesdb/Quotes/{id}/followUpses" : {
       "get" : {
         "tags" : [ "QuotesController" ],
         "description" : "Gets the followUpses instance associated with the given id.",
@@ -1923,7 +1897,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -1932,7 +1905,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -1946,10 +1919,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "f074727b-31fc-48e4-8c2d-fe493d88db7e",
+          "x-WM-UUID" : "6c7fd10f-1e67-4ab5-bdea-370c4759c67d",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -1964,16 +1936,16 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "75d83cc3-20a0-4abe-a9dc-9a0557b98661",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "findAssociatedfollowUpses"
+        "x-WM-OPERATION_UID" : "6feb6aff-3aec-42b0-b398-5674b98119d5",
+        "x-WM-METHOD_NAME" : "findAssociatedfollowUpses",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Quotes",
       "x-WM-TAG" : "QuotesController",
-      "x-WM-RELATIVE_PATH" : "/{id:.+}/followUpses",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Quotes/{id:.+}/followUpses"
+      "x-WM-BASE_PATH" : "/salesdb/Quotes",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Quotes/{id}/followUpses",
+      "x-WM-RELATIVE_PATH" : "/{id}/followUpses"
     },
-    "/salesdb/Quotes/{id:.+}/saleses" : {
+    "/salesdb/Quotes/{id}/saleses" : {
       "get" : {
         "tags" : [ "QuotesController" ],
         "description" : "Gets the saleses instance associated with the given id.",
@@ -1983,7 +1955,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -1992,7 +1963,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -2006,10 +1977,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "3c637193-af48-4934-a438-61edd4c21bf7",
+          "x-WM-UUID" : "cc0274fb-0647-46ae-b025-c1b9c2df29d5",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -2024,14 +1994,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "8f528a2a-4fb5-433a-bb04-c755c999a0a7",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "findAssociatedsaleses"
+        "x-WM-OPERATION_UID" : "996428b4-df55-461c-a8cc-c9f531672d3f",
+        "x-WM-METHOD_NAME" : "findAssociatedsaleses",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Quotes",
       "x-WM-TAG" : "QuotesController",
-      "x-WM-RELATIVE_PATH" : "/{id:.+}/saleses",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Quotes/{id:.+}/saleses"
+      "x-WM-BASE_PATH" : "/salesdb/Quotes",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Quotes/{id}/saleses",
+      "x-WM-RELATIVE_PATH" : "/{id}/saleses"
     },
     "/salesdb/Reps/" : {
       "get" : {
@@ -2043,7 +2013,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -2052,7 +2021,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -2074,9 +2043,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "edaab71a-a2fd-4d7c-bcde-35b93541012d",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "getRepss"
+        "x-WM-OPERATION_UID" : "3a1ff4b8-8ebe-4236-8b25-a8a8af0e1180",
+        "x-WM-METHOD_NAME" : "getRepss",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "post" : {
         "tags" : [ "RepsController" ],
@@ -2091,7 +2060,7 @@
             "x-WM-TYPE_ARGUMENTS" : [ ]
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.salesdb.Reps",
-          "x-WM-UUID" : "3b8a973d-7142-4d02-a12e-ca27afe5e3a1",
+          "x-WM-UUID" : "0c69bb1f-4ba0-4888-91f3-b306e1ec8ddb",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -2103,14 +2072,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "f03b71f3-6418-4294-a254-0e7be545e099",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "createReps"
+        "x-WM-OPERATION_UID" : "3b22e053-c3e1-4969-90b6-1f5fbe1252d6",
+        "x-WM-METHOD_NAME" : "createReps",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Reps",
       "x-WM-TAG" : "RepsController",
-      "x-WM-RELATIVE_PATH" : "/",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Reps/"
+      "x-WM-BASE_PATH" : "/salesdb/Reps",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Reps/",
+      "x-WM-RELATIVE_PATH" : "/"
     },
     "/salesdb/Reps/count" : {
       "get" : {
@@ -2126,14 +2095,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "90eb7d0c-ac27-4797-b9a2-6d7decd4a63e",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "countAll"
+        "x-WM-OPERATION_UID" : "4437f0a5-297a-4526-9b26-0fe847ead602",
+        "x-WM-METHOD_NAME" : "countAll",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Reps",
       "x-WM-TAG" : "RepsController",
-      "x-WM-RELATIVE_PATH" : "/count",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Reps/count"
+      "x-WM-BASE_PATH" : "/salesdb/Reps",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Reps/count",
+      "x-WM-RELATIVE_PATH" : "/count"
     },
     "/salesdb/Reps/search" : {
       "post" : {
@@ -2145,7 +2114,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -2154,7 +2122,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -2176,7 +2144,7 @@
             "x-WM-IS_LIST" : false
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.expression.QueryFilter",
-          "x-WM-UUID" : "a1a72793-94bf-4cda-a1fa-089ad86bac9e",
+          "x-WM-UUID" : "5df5c4d5-775e-4f44-8f79-1927c810b8a9",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -2191,16 +2159,16 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "ecc38d51-818c-42e5-b554-54eb48840a51",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "findAll"
+        "x-WM-OPERATION_UID" : "e750dedc-aca4-4fd1-bf7d-3784cebf952e",
+        "x-WM-METHOD_NAME" : "findAll",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Reps",
       "x-WM-TAG" : "RepsController",
-      "x-WM-RELATIVE_PATH" : "/search",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Reps/search"
+      "x-WM-BASE_PATH" : "/salesdb/Reps",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Reps/search",
+      "x-WM-RELATIVE_PATH" : "/search"
     },
-    "/salesdb/Reps/{id:.+}" : {
+    "/salesdb/Reps/{id}" : {
       "get" : {
         "tags" : [ "RepsController" ],
         "description" : "Returns the Reps instance associated with the given id.",
@@ -2210,10 +2178,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "785c6622-adb0-4b17-8661-b148174c64c5",
+          "x-WM-UUID" : "50f9389b-3965-4c66-bf16-335dceee449e",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -2225,9 +2192,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "f415a6d0-2695-4d4b-9f5c-a5e8a7c39d09",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "getReps"
+        "x-WM-OPERATION_UID" : "a2be5d96-b97f-4eae-a56f-f052348d56bc",
+        "x-WM-METHOD_NAME" : "getReps",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "put" : {
         "tags" : [ "RepsController" ],
@@ -2238,10 +2205,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "777a4c6f-8c9d-48f7-b08a-bbb9fa483355",
+          "x-WM-UUID" : "8f321c4b-b78a-4414-9ee3-1f4785986215",
           "x-WM-EDITABLE" : true
         }, {
           "in" : "body",
@@ -2252,7 +2218,7 @@
             "x-WM-TYPE_ARGUMENTS" : [ ]
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.salesdb.Reps",
-          "x-WM-UUID" : "4bd4c652-d33c-4619-bc75-5a92c6f6086d",
+          "x-WM-UUID" : "dce5246f-b1fe-4837-b351-2b9120c2ac93",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -2264,9 +2230,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "20677327-8d87-48fe-bbe3-334a68ab04fa",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "editReps"
+        "x-WM-OPERATION_UID" : "08e2d381-bc65-4de1-b1d5-cc76a201250a",
+        "x-WM-METHOD_NAME" : "editReps",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "delete" : {
         "tags" : [ "RepsController" ],
@@ -2277,10 +2243,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "c7bba906-24a5-4465-ab44-9aee0b4463f5",
+          "x-WM-UUID" : "7bcf4121-cc60-4c7d-89be-21df7713e552",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -2291,16 +2256,16 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "28ab8143-a60c-480b-86f6-d6c3abef66c8",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "delete"
+        "x-WM-OPERATION_UID" : "43c828a8-549f-475c-a879-476753c50890",
+        "x-WM-METHOD_NAME" : "delete",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Reps",
       "x-WM-TAG" : "RepsController",
-      "x-WM-RELATIVE_PATH" : "/{id:.+}",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Reps/{id:.+}"
+      "x-WM-BASE_PATH" : "/salesdb/Reps",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Reps/{id}",
+      "x-WM-RELATIVE_PATH" : "/{id}"
     },
-    "/salesdb/Reps/{id:.+}/quoteses" : {
+    "/salesdb/Reps/{id}/quoteses" : {
       "get" : {
         "tags" : [ "RepsController" ],
         "description" : "Gets the quoteses instance associated with the given id.",
@@ -2310,7 +2275,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -2319,7 +2283,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -2333,10 +2297,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "04f375a2-c43e-4e48-97a4-fb7f90ff438b",
+          "x-WM-UUID" : "0c0288c5-d461-42da-8baa-4999524b352d",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -2351,16 +2314,16 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "d437adda-ed34-4c3d-8eac-6d957a61bbec",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "findAssociatedquoteses"
+        "x-WM-OPERATION_UID" : "ff627e6c-8fd0-4a15-990c-5c773c51e9bc",
+        "x-WM-METHOD_NAME" : "findAssociatedquoteses",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Reps",
       "x-WM-TAG" : "RepsController",
-      "x-WM-RELATIVE_PATH" : "/{id:.+}/quoteses",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Reps/{id:.+}/quoteses"
+      "x-WM-BASE_PATH" : "/salesdb/Reps",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Reps/{id}/quoteses",
+      "x-WM-RELATIVE_PATH" : "/{id}/quoteses"
     },
-    "/salesdb/Reps/{id:.+}/taskses" : {
+    "/salesdb/Reps/{id}/taskses" : {
       "get" : {
         "tags" : [ "RepsController" ],
         "description" : "Gets the taskses instance associated with the given id.",
@@ -2370,7 +2333,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -2379,7 +2341,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -2393,10 +2355,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "e1f0bc47-62e0-4847-b29d-e305029ba2d9",
+          "x-WM-UUID" : "7282a6ea-aa6b-4317-bb13-9b530e0ed576",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -2411,14 +2372,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "ac7fc797-93a3-4667-8f6a-e02177819cad",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "findAssociatedtaskses"
+        "x-WM-OPERATION_UID" : "2bc90124-8d39-4f75-b257-646471cb86bf",
+        "x-WM-METHOD_NAME" : "findAssociatedtaskses",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Reps",
       "x-WM-TAG" : "RepsController",
-      "x-WM-RELATIVE_PATH" : "/{id:.+}/taskses",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Reps/{id:.+}/taskses"
+      "x-WM-BASE_PATH" : "/salesdb/Reps",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Reps/{id}/taskses",
+      "x-WM-RELATIVE_PATH" : "/{id}/taskses"
     },
     "/salesdb/Sales/" : {
       "get" : {
@@ -2430,7 +2391,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -2439,7 +2399,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -2461,9 +2421,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "13448498-e08f-4d94-803e-e77b27c6693d",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "getSaless"
+        "x-WM-OPERATION_UID" : "7331844a-3a55-4caa-8469-361499ae2f95",
+        "x-WM-METHOD_NAME" : "getSaless",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "post" : {
         "tags" : [ "SalesController" ],
@@ -2478,7 +2438,7 @@
             "x-WM-TYPE_ARGUMENTS" : [ ]
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.salesdb.Sales",
-          "x-WM-UUID" : "6ea3a992-21c7-474f-a5c2-d04cc0eea99c",
+          "x-WM-UUID" : "9afc964b-c99e-44a8-8709-c0c11ff879e3",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -2490,14 +2450,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "1f1f7268-9ed6-4e78-9870-45269215efee",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "createSales"
+        "x-WM-OPERATION_UID" : "fada1090-e2cb-485b-8bf3-141a0538b16e",
+        "x-WM-METHOD_NAME" : "createSales",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Sales",
       "x-WM-TAG" : "SalesController",
-      "x-WM-RELATIVE_PATH" : "/",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Sales/"
+      "x-WM-BASE_PATH" : "/salesdb/Sales",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Sales/",
+      "x-WM-RELATIVE_PATH" : "/"
     },
     "/salesdb/Sales/count" : {
       "get" : {
@@ -2513,14 +2473,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "e2724f0f-b56c-4812-bb22-9b07f0ecc3df",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "countAll"
+        "x-WM-OPERATION_UID" : "3eb5b2fc-38bd-4747-b5c3-17a24e288772",
+        "x-WM-METHOD_NAME" : "countAll",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Sales",
       "x-WM-TAG" : "SalesController",
-      "x-WM-RELATIVE_PATH" : "/count",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Sales/count"
+      "x-WM-BASE_PATH" : "/salesdb/Sales",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Sales/count",
+      "x-WM-RELATIVE_PATH" : "/count"
     },
     "/salesdb/Sales/search" : {
       "post" : {
@@ -2532,7 +2492,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -2541,7 +2500,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -2563,7 +2522,7 @@
             "x-WM-IS_LIST" : false
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.expression.QueryFilter",
-          "x-WM-UUID" : "b0998954-7eb4-43a7-9711-b08d6ed76880",
+          "x-WM-UUID" : "99abaa5a-9ccb-43eb-9dd9-8f7189a4f126",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -2578,16 +2537,16 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "3d760b1e-c82e-4673-8e12-82b2136e0ce8",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "findAll"
+        "x-WM-OPERATION_UID" : "effd862a-7bfe-4685-ac35-0432fbd320e8",
+        "x-WM-METHOD_NAME" : "findAll",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Sales",
       "x-WM-TAG" : "SalesController",
-      "x-WM-RELATIVE_PATH" : "/search",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Sales/search"
+      "x-WM-BASE_PATH" : "/salesdb/Sales",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Sales/search",
+      "x-WM-RELATIVE_PATH" : "/search"
     },
-    "/salesdb/Sales/{id:.+}" : {
+    "/salesdb/Sales/{id}" : {
       "get" : {
         "tags" : [ "SalesController" ],
         "description" : "Returns the Sales instance associated with the given id.",
@@ -2597,10 +2556,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "0a36574e-0650-4388-9528-bbdc3f2febe8",
+          "x-WM-UUID" : "c160c9fb-b952-4a20-91d3-3cb3e01ba4ce",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -2612,9 +2570,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "44ef0943-1b78-4a59-8e0b-c012c94c2480",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "getSales"
+        "x-WM-OPERATION_UID" : "2e5c71e8-d39c-4dec-8313-04d8b7acecfc",
+        "x-WM-METHOD_NAME" : "getSales",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "put" : {
         "tags" : [ "SalesController" ],
@@ -2625,10 +2583,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "1fd6d4aa-3413-414d-af1f-b7f1c7eb7695",
+          "x-WM-UUID" : "a5bd1246-ecfe-4bac-90c6-3721960da190",
           "x-WM-EDITABLE" : true
         }, {
           "in" : "body",
@@ -2639,7 +2596,7 @@
             "x-WM-TYPE_ARGUMENTS" : [ ]
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.salesdb.Sales",
-          "x-WM-UUID" : "b2b36ad1-ad37-474c-afdc-c0309fca6b1f",
+          "x-WM-UUID" : "1e61dad8-ca35-43cb-a02e-d65fe69fba47",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -2651,9 +2608,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "05fde10d-b872-456d-a117-1b6f4eff752c",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "editSales"
+        "x-WM-OPERATION_UID" : "2a1a5dfa-1741-4238-993b-ed9998e346c8",
+        "x-WM-METHOD_NAME" : "editSales",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "delete" : {
         "tags" : [ "SalesController" ],
@@ -2664,10 +2621,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "acba3352-8686-4c82-9a2e-176263868a83",
+          "x-WM-UUID" : "339c2f5a-65b5-4380-93a0-3f2e991cebb0",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -2678,14 +2634,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "d6c31a39-4e61-4a14-a185-172fc354b960",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "delete"
+        "x-WM-OPERATION_UID" : "7f8849c3-812a-4cdd-81d0-95737dc03de3",
+        "x-WM-METHOD_NAME" : "delete",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Sales",
       "x-WM-TAG" : "SalesController",
-      "x-WM-RELATIVE_PATH" : "/{id:.+}",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Sales/{id:.+}"
+      "x-WM-BASE_PATH" : "/salesdb/Sales",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Sales/{id}",
+      "x-WM-RELATIVE_PATH" : "/{id}"
     },
     "/salesdb/States/" : {
       "get" : {
@@ -2697,7 +2653,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -2706,7 +2661,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -2728,9 +2683,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "2293e354-6af6-426b-ad82-c8d691ac6cd9",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "getStatess"
+        "x-WM-OPERATION_UID" : "5e14a988-3ccd-42e0-8811-8f58afb65cf1",
+        "x-WM-METHOD_NAME" : "getStatess",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "post" : {
         "tags" : [ "StatesController" ],
@@ -2745,7 +2700,7 @@
             "x-WM-TYPE_ARGUMENTS" : [ ]
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.salesdb.States",
-          "x-WM-UUID" : "1f8849d1-8cc3-4a36-9eb8-f6e23efafdce",
+          "x-WM-UUID" : "baf78116-3454-4c13-ba16-81f632e3733e",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -2757,14 +2712,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "183b43fc-1ecf-4000-ba47-f9e8d89d3375",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "createStates"
+        "x-WM-OPERATION_UID" : "9b50dd55-ff3e-47dd-86bc-cc6b0e151fb7",
+        "x-WM-METHOD_NAME" : "createStates",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/States",
       "x-WM-TAG" : "StatesController",
-      "x-WM-RELATIVE_PATH" : "/",
-      "x-WM-COMPLETE_PATH" : "/salesdb/States/"
+      "x-WM-BASE_PATH" : "/salesdb/States",
+      "x-WM-COMPLETE_PATH" : "/salesdb/States/",
+      "x-WM-RELATIVE_PATH" : "/"
     },
     "/salesdb/States/count" : {
       "get" : {
@@ -2780,14 +2735,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "7601084d-55d4-458a-bbbb-5f2f2e6edfd9",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "countAll"
+        "x-WM-OPERATION_UID" : "bd607f8c-b14f-4644-9743-79a104d80d64",
+        "x-WM-METHOD_NAME" : "countAll",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/States",
       "x-WM-TAG" : "StatesController",
-      "x-WM-RELATIVE_PATH" : "/count",
-      "x-WM-COMPLETE_PATH" : "/salesdb/States/count"
+      "x-WM-BASE_PATH" : "/salesdb/States",
+      "x-WM-COMPLETE_PATH" : "/salesdb/States/count",
+      "x-WM-RELATIVE_PATH" : "/count"
     },
     "/salesdb/States/search" : {
       "post" : {
@@ -2799,7 +2754,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -2808,7 +2762,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -2830,7 +2784,7 @@
             "x-WM-IS_LIST" : false
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.expression.QueryFilter",
-          "x-WM-UUID" : "e0d3ea10-e305-4031-b70f-04379a7f89c3",
+          "x-WM-UUID" : "fe2a1a28-1fe3-4813-b2be-4d4515c8bf54",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -2845,16 +2799,16 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "a63d045e-0110-4867-91b9-ecf67c77f82e",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "findAll"
+        "x-WM-OPERATION_UID" : "299b09ed-f811-452e-b07c-d04d140b80a3",
+        "x-WM-METHOD_NAME" : "findAll",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/States",
       "x-WM-TAG" : "StatesController",
-      "x-WM-RELATIVE_PATH" : "/search",
-      "x-WM-COMPLETE_PATH" : "/salesdb/States/search"
+      "x-WM-BASE_PATH" : "/salesdb/States",
+      "x-WM-COMPLETE_PATH" : "/salesdb/States/search",
+      "x-WM-RELATIVE_PATH" : "/search"
     },
-    "/salesdb/States/{id:.+}" : {
+    "/salesdb/States/{id}" : {
       "get" : {
         "tags" : [ "StatesController" ],
         "description" : "Returns the States instance associated with the given id.",
@@ -2864,10 +2818,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "b2230eec-582c-47ef-9137-0d3cab797df3",
+          "x-WM-UUID" : "8919d5f4-675e-4c0c-a0bd-d876538a0af1",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -2879,9 +2832,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "6c833846-ce87-4971-a802-8fcab36ca40c",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "getStates"
+        "x-WM-OPERATION_UID" : "2d70b93d-c3ee-449b-a73e-9f0651acf047",
+        "x-WM-METHOD_NAME" : "getStates",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "put" : {
         "tags" : [ "StatesController" ],
@@ -2892,10 +2845,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "d53f39df-92c8-4e7b-90dd-d0bf57291552",
+          "x-WM-UUID" : "68684178-da8e-4255-8433-d861f33d0cec",
           "x-WM-EDITABLE" : true
         }, {
           "in" : "body",
@@ -2906,7 +2858,7 @@
             "x-WM-TYPE_ARGUMENTS" : [ ]
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.salesdb.States",
-          "x-WM-UUID" : "6f1106ca-0e76-4f07-868c-cca6f84d41d7",
+          "x-WM-UUID" : "9e7189d1-76ed-4297-84c0-7229d4e300b9",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -2918,9 +2870,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "9dd53130-a65c-428f-8c28-393d6e0bced1",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "editStates"
+        "x-WM-OPERATION_UID" : "d4769202-cb42-46d5-ad96-21c6b0118ceb",
+        "x-WM-METHOD_NAME" : "editStates",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "delete" : {
         "tags" : [ "StatesController" ],
@@ -2931,10 +2883,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "ea0c3680-e77b-4a1e-a268-5eb040db7e0a",
+          "x-WM-UUID" : "a52906bc-456c-41e4-bc92-faf9da59402c",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -2945,16 +2896,16 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "19a0467c-8430-4d3b-8dbb-1b11a142086e",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "delete"
+        "x-WM-OPERATION_UID" : "36da0dd2-7fe8-4cea-b8ff-6e82116f2456",
+        "x-WM-METHOD_NAME" : "delete",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/States",
       "x-WM-TAG" : "StatesController",
-      "x-WM-RELATIVE_PATH" : "/{id:.+}",
-      "x-WM-COMPLETE_PATH" : "/salesdb/States/{id:.+}"
+      "x-WM-BASE_PATH" : "/salesdb/States",
+      "x-WM-COMPLETE_PATH" : "/salesdb/States/{id}",
+      "x-WM-RELATIVE_PATH" : "/{id}"
     },
-    "/salesdb/States/{id:.+}/customerses" : {
+    "/salesdb/States/{id}/customerses" : {
       "get" : {
         "tags" : [ "StatesController" ],
         "description" : "Gets the customerses instance associated with the given id.",
@@ -2964,7 +2915,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -2973,7 +2923,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -2987,10 +2937,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "ff322179-88ef-48de-a05a-a9fd641bb6b9",
+          "x-WM-UUID" : "91213354-caae-43ca-a22c-1d940989d59c",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -3005,14 +2954,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "3f9514e2-97b5-4250-9cb9-f6ab086bbd6d",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "findAssociatedcustomerses"
+        "x-WM-OPERATION_UID" : "4b9cf274-875f-4258-8595-013d79ca87e1",
+        "x-WM-METHOD_NAME" : "findAssociatedcustomerses",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/States",
       "x-WM-TAG" : "StatesController",
-      "x-WM-RELATIVE_PATH" : "/{id:.+}/customerses",
-      "x-WM-COMPLETE_PATH" : "/salesdb/States/{id:.+}/customerses"
+      "x-WM-BASE_PATH" : "/salesdb/States",
+      "x-WM-COMPLETE_PATH" : "/salesdb/States/{id}/customerses",
+      "x-WM-RELATIVE_PATH" : "/{id}/customerses"
     },
     "/salesdb/Tasks/" : {
       "get" : {
@@ -3024,7 +2973,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -3033,7 +2981,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -3055,9 +3003,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "34794865-573f-4d3a-9588-6523075be36a",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "getTaskss"
+        "x-WM-OPERATION_UID" : "04d5a262-9388-456c-9d2d-242d6d1d2eec",
+        "x-WM-METHOD_NAME" : "getTaskss",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "post" : {
         "tags" : [ "TasksController" ],
@@ -3072,7 +3020,7 @@
             "x-WM-TYPE_ARGUMENTS" : [ ]
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.salesdb.Tasks",
-          "x-WM-UUID" : "430268aa-cbda-4005-95ea-2ded53f701c8",
+          "x-WM-UUID" : "f6610f33-0a6c-45d9-a3dd-2408376df486",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -3084,14 +3032,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "264248bd-ae64-4b52-911a-b93edbd56d86",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "createTasks"
+        "x-WM-OPERATION_UID" : "94db2746-208a-47a8-9fea-59d8bfa1859e",
+        "x-WM-METHOD_NAME" : "createTasks",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Tasks",
       "x-WM-TAG" : "TasksController",
-      "x-WM-RELATIVE_PATH" : "/",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Tasks/"
+      "x-WM-BASE_PATH" : "/salesdb/Tasks",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Tasks/",
+      "x-WM-RELATIVE_PATH" : "/"
     },
     "/salesdb/Tasks/count" : {
       "get" : {
@@ -3107,14 +3055,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "a645c13a-b3d6-4400-b058-2828a9b11111",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "countAll"
+        "x-WM-OPERATION_UID" : "01f1cc5f-7254-48bc-b1a8-4dca5a7f5bc7",
+        "x-WM-METHOD_NAME" : "countAll",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Tasks",
       "x-WM-TAG" : "TasksController",
-      "x-WM-RELATIVE_PATH" : "/count",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Tasks/count"
+      "x-WM-BASE_PATH" : "/salesdb/Tasks",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Tasks/count",
+      "x-WM-RELATIVE_PATH" : "/count"
     },
     "/salesdb/Tasks/search" : {
       "post" : {
@@ -3126,7 +3074,6 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -3135,7 +3082,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -3157,7 +3104,7 @@
             "x-WM-IS_LIST" : false
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.expression.QueryFilter",
-          "x-WM-UUID" : "c4bb59ce-d760-47e4-94c0-855b4306c87f",
+          "x-WM-UUID" : "56d46353-5710-46f0-8f14-3d355ceea6ba",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -3172,16 +3119,16 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "dbe19846-ea5a-44e8-b5e9-38588af21dec",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "findAll"
+        "x-WM-OPERATION_UID" : "94f54995-1d1b-469d-8c2c-ff753807355c",
+        "x-WM-METHOD_NAME" : "findAll",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Tasks",
       "x-WM-TAG" : "TasksController",
-      "x-WM-RELATIVE_PATH" : "/search",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Tasks/search"
+      "x-WM-BASE_PATH" : "/salesdb/Tasks",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Tasks/search",
+      "x-WM-RELATIVE_PATH" : "/search"
     },
-    "/salesdb/Tasks/{id:.+}" : {
+    "/salesdb/Tasks/{id}" : {
       "get" : {
         "tags" : [ "TasksController" ],
         "description" : "Returns the Tasks instance associated with the given id.",
@@ -3191,10 +3138,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "2587ad01-7e7e-4cb1-92f7-302f2b638233",
+          "x-WM-UUID" : "2ade9af3-970a-4b0b-acd9-cd4e69832bbd",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -3206,9 +3152,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "892c0bc7-9d5e-46e4-92b9-169643771e21",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "getTasks"
+        "x-WM-OPERATION_UID" : "2c023043-4da4-4da5-9991-74cf5e1e1a71",
+        "x-WM-METHOD_NAME" : "getTasks",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "put" : {
         "tags" : [ "TasksController" ],
@@ -3219,10 +3165,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "d710fdee-d05e-4d90-9043-a7545ec22500",
+          "x-WM-UUID" : "9b415325-401b-4df6-8bf9-87ec8f75a140",
           "x-WM-EDITABLE" : true
         }, {
           "in" : "body",
@@ -3233,7 +3178,7 @@
             "x-WM-TYPE_ARGUMENTS" : [ ]
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.salesdb.Tasks",
-          "x-WM-UUID" : "9a47bf76-f68c-44d2-9d6a-23dcbf14ff57",
+          "x-WM-UUID" : "608b132c-681c-41fb-8c40-b2dde21e8ec5",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -3245,9 +3190,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "f59ee268-d847-42fb-8c3d-c206ba5363c1",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "editTasks"
+        "x-WM-OPERATION_UID" : "aab63739-8587-4afe-b456-a7ece585f01c",
+        "x-WM-METHOD_NAME" : "editTasks",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "delete" : {
         "tags" : [ "TasksController" ],
@@ -3258,10 +3203,9 @@
           "in" : "path",
           "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "78f8f667-8535-4226-8314-5332d6379582",
+          "x-WM-UUID" : "987b3ec0-71a4-48a8-b5ee-8e3432c0587a",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -3272,14 +3216,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "597c01d3-ea6b-43f4-bcc8-809fe799815a",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "delete"
+        "x-WM-OPERATION_UID" : "8e803ce0-7450-469c-b3df-e98e55e21f76",
+        "x-WM-METHOD_NAME" : "delete",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/Tasks",
       "x-WM-TAG" : "TasksController",
-      "x-WM-RELATIVE_PATH" : "/{id:.+}",
-      "x-WM-COMPLETE_PATH" : "/salesdb/Tasks/{id:.+}"
+      "x-WM-BASE_PATH" : "/salesdb/Tasks",
+      "x-WM-COMPLETE_PATH" : "/salesdb/Tasks/{id}",
+      "x-WM-RELATIVE_PATH" : "/{id}"
     },
     "/salesdb/procedureExecutor/procedure/execute/wm_custom" : {
       "post" : {
@@ -3295,7 +3239,7 @@
             "x-WM-TYPE_ARGUMENTS" : [ ]
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.model.CustomProcedure",
-          "x-WM-UUID" : "7b3b66b3-f149-419a-9d3a-78e4f923c1a1",
+          "x-WM-UUID" : "26ad008c-4df2-489d-a845-d68f6123aca6",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -3312,9 +3256,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "0e8cdeb6-3248-4d2e-9754-ce0faa37af8b",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "executeWMCustomProcedure"
+        "x-WM-OPERATION_UID" : "1ba2cddd-3286-4696-be0f-54cb4f61ac57",
+        "x-WM-METHOD_NAME" : "executeWMCustomProcedure",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "x-WM-TAG" : "ProcedureExecutionController",
       "x-WM-BASE_PATH" : "/salesdb/procedureExecutor",
@@ -3329,29 +3273,26 @@
         "parameters" : [ {
           "name" : "year",
           "in" : "query",
-          "required" : false,
+          "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "d54b8489-0026-467a-a072-9e29576b6ce2",
+          "x-WM-UUID" : "9b83e0e8-5bd3-46ee-9e32-c126a6cbe95b",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "month",
           "in" : "query",
-          "required" : false,
+          "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "440d0327-40a1-4a48-8d81-a67a9d1471da",
+          "x-WM-UUID" : "13011e2f-a9ec-4111-8a66-7b18998f5047",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "page",
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -3360,7 +3301,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -3382,14 +3323,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "cda0ded6-ae4f-4952-ae10-e5a39778c7df",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "executeCustomersRatio"
+        "x-WM-OPERATION_UID" : "1c244e67-1a79-4a06-afd4-16b5b57b824d",
+        "x-WM-METHOD_NAME" : "executeCustomersRatio",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
       "x-WM-TAG" : "QueryExecutionController",
-      "x-WM-RELATIVE_PATH" : "/queries/customersRatio",
-      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/customersRatio"
+      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
+      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/customersRatio",
+      "x-WM-RELATIVE_PATH" : "/queries/customersRatio"
     },
     "/salesdb/queryExecutor/queries/eachRepCustomerWiseSales" : {
       "get" : {
@@ -3399,19 +3340,17 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "query",
-          "required" : false,
+          "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "6c37319c-f421-4934-a95e-b90d10fc254a",
+          "x-WM-UUID" : "528bff4a-3af3-499d-b51d-5deab2b0c1c8",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "page",
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -3420,7 +3359,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -3442,14 +3381,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "befdc5e8-62c4-4f3f-9d4a-dd100e80d4b2",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "executeEachRepCustomerWiseSales"
+        "x-WM-OPERATION_UID" : "7730a085-29af-4bc0-9e99-e5adf799bbfd",
+        "x-WM-METHOD_NAME" : "executeEachRepCustomerWiseSales",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
       "x-WM-TAG" : "QueryExecutionController",
-      "x-WM-RELATIVE_PATH" : "/queries/eachRepCustomerWiseSales",
-      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/eachRepCustomerWiseSales"
+      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
+      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/eachRepCustomerWiseSales",
+      "x-WM-RELATIVE_PATH" : "/queries/eachRepCustomerWiseSales"
     },
     "/salesdb/queryExecutor/queries/leadsByChannel" : {
       "get" : {
@@ -3459,19 +3398,17 @@
         "parameters" : [ {
           "name" : "channel",
           "in" : "query",
-          "required" : false,
+          "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "725095fa-cc5b-4509-aad4-f937402078cf",
+          "x-WM-UUID" : "152467ad-71cd-49c9-8963-dafd78a8560e",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "page",
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -3480,7 +3417,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -3502,14 +3439,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "1f4429c4-c4cb-4705-ab60-92fbc754a1af",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "executeLeadsByChannel"
+        "x-WM-OPERATION_UID" : "83470f94-b35b-42f2-adf0-569c30c2451d",
+        "x-WM-METHOD_NAME" : "executeLeadsByChannel",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
       "x-WM-TAG" : "QueryExecutionController",
-      "x-WM-RELATIVE_PATH" : "/queries/leadsByChannel",
-      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/leadsByChannel"
+      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
+      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/leadsByChannel",
+      "x-WM-RELATIVE_PATH" : "/queries/leadsByChannel"
     },
     "/salesdb/queryExecutor/queries/leadsCount" : {
       "get" : {
@@ -3519,19 +3456,17 @@
         "parameters" : [ {
           "name" : "channel",
           "in" : "query",
-          "required" : false,
+          "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "0cec198b-98f6-49c9-89f5-da9c8d88812b",
+          "x-WM-UUID" : "1f5bffed-8f5b-4dd9-91cb-b2cace35a435",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "page",
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -3540,7 +3475,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -3562,14 +3497,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "3fc90053-dce8-4f92-a802-8ffff5d298cc",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "executeLeadsCount"
+        "x-WM-OPERATION_UID" : "423984ca-cd27-469a-91af-cdebf0185fa3",
+        "x-WM-METHOD_NAME" : "executeLeadsCount",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
       "x-WM-TAG" : "QueryExecutionController",
-      "x-WM-RELATIVE_PATH" : "/queries/leadsCount",
-      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/leadsCount"
+      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
+      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/leadsCount",
+      "x-WM-RELATIVE_PATH" : "/queries/leadsCount"
     },
     "/salesdb/queryExecutor/queries/repsCount" : {
       "get" : {
@@ -3579,19 +3514,17 @@
         "parameters" : [ {
           "name" : "channel",
           "in" : "query",
-          "required" : false,
+          "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "e5df1b77-fa9f-4e16-9d14-e3db9defda49",
+          "x-WM-UUID" : "f74b08d3-019e-47c2-b01b-e1709fc326ce",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "page",
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -3600,7 +3533,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -3622,14 +3555,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "f7d55dfc-0953-4997-951c-35469d65f178",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "executeRepsCount"
+        "x-WM-OPERATION_UID" : "39ac3f68-84b8-43fb-ba3e-216e08ef546a",
+        "x-WM-METHOD_NAME" : "executeRepsCount",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
       "x-WM-TAG" : "QueryExecutionController",
-      "x-WM-RELATIVE_PATH" : "/queries/repsCount",
-      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/repsCount"
+      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
+      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/repsCount",
+      "x-WM-RELATIVE_PATH" : "/queries/repsCount"
     },
     "/salesdb/queryExecutor/queries/revenueHeatMap" : {
       "get" : {
@@ -3639,29 +3572,26 @@
         "parameters" : [ {
           "name" : "year",
           "in" : "query",
-          "required" : false,
+          "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "114c8970-c671-43ac-9d1a-ea05afdba46d",
+          "x-WM-UUID" : "0d4ed564-d986-4ce6-8f09-6df1d833a41c",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "month",
           "in" : "query",
-          "required" : false,
+          "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "6c468a8a-36c5-4771-aef0-1b674f32e316",
+          "x-WM-UUID" : "232660a9-561b-44da-a92c-76374e9defd4",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "page",
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -3670,7 +3600,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -3692,14 +3622,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "70e9cc72-403c-43fe-b0ac-116b41798ef5",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "executeRevenueHeatMap"
+        "x-WM-OPERATION_UID" : "17574720-7efd-4b02-99c0-487ba432d0d6",
+        "x-WM-METHOD_NAME" : "executeRevenueHeatMap",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
       "x-WM-TAG" : "QueryExecutionController",
-      "x-WM-RELATIVE_PATH" : "/queries/revenueHeatMap",
-      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/revenueHeatMap"
+      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
+      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/revenueHeatMap",
+      "x-WM-RELATIVE_PATH" : "/queries/revenueHeatMap"
     },
     "/salesdb/queryExecutor/queries/salesByChannels" : {
       "get" : {
@@ -3709,29 +3639,26 @@
         "parameters" : [ {
           "name" : "year",
           "in" : "query",
-          "required" : false,
+          "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "40886a2c-ebbe-4433-9608-b79f2b1f3bda",
+          "x-WM-UUID" : "b7ff8b88-b5a5-42fe-9a5b-987eb750e32b",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "month",
           "in" : "query",
-          "required" : false,
+          "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "274cb7e9-e0c3-4cb3-bc2f-edf615ad6d04",
+          "x-WM-UUID" : "d6e234d0-5b09-408f-95ec-541218d010b6",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "page",
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -3740,7 +3667,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -3762,14 +3689,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "5b818db2-3e00-4412-96e6-46dd3e50ecac",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "executeSalesByChannels"
+        "x-WM-OPERATION_UID" : "9741802b-79a2-4893-b4f1-0da6b599f757",
+        "x-WM-METHOD_NAME" : "executeSalesByChannels",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
       "x-WM-TAG" : "QueryExecutionController",
-      "x-WM-RELATIVE_PATH" : "/queries/salesByChannels",
-      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/salesByChannels"
+      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
+      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/salesByChannels",
+      "x-WM-RELATIVE_PATH" : "/queries/salesByChannels"
     },
     "/salesdb/queryExecutor/queries/salesByEachRep" : {
       "get" : {
@@ -3779,19 +3706,17 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "query",
-          "required" : false,
+          "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "169526fc-62ed-47f0-b9ee-24518bb639e1",
+          "x-WM-UUID" : "d885705f-1c87-4d1a-8e41-1c50c3be29c3",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "page",
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -3800,7 +3725,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -3822,14 +3747,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "6386f90d-d2d9-4f21-ba05-1c380c377e16",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "executeSalesByEachRep"
+        "x-WM-OPERATION_UID" : "051267a4-73c3-4f28-98ed-23fa8bcb051d",
+        "x-WM-METHOD_NAME" : "executeSalesByEachRep",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
       "x-WM-TAG" : "QueryExecutionController",
-      "x-WM-RELATIVE_PATH" : "/queries/salesByEachRep",
-      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/salesByEachRep"
+      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
+      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/salesByEachRep",
+      "x-WM-RELATIVE_PATH" : "/queries/salesByEachRep"
     },
     "/salesdb/queryExecutor/queries/salesByReps" : {
       "get" : {
@@ -3839,19 +3764,17 @@
         "parameters" : [ {
           "name" : "channel",
           "in" : "query",
-          "required" : false,
+          "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "ea4cee55-731e-486a-bd95-4c56633237fb",
+          "x-WM-UUID" : "0cb7f35e-03e2-48c8-a17f-b0476ca7d0b3",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "page",
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -3860,7 +3783,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -3882,14 +3805,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "66c678e6-44cb-4118-b2ab-1ebe0261dc27",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "executeSalesByReps"
+        "x-WM-OPERATION_UID" : "e5bf9d0f-4d48-40d2-849e-1a5457f2357f",
+        "x-WM-METHOD_NAME" : "executeSalesByReps",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
       "x-WM-TAG" : "QueryExecutionController",
-      "x-WM-RELATIVE_PATH" : "/queries/salesByReps",
-      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/salesByReps"
+      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
+      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/salesByReps",
+      "x-WM-RELATIVE_PATH" : "/queries/salesByReps"
     },
     "/salesdb/queryExecutor/queries/salesRevenueAndCount" : {
       "get" : {
@@ -3899,19 +3822,17 @@
         "parameters" : [ {
           "name" : "channel",
           "in" : "query",
-          "required" : false,
+          "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "7789679a-e1b2-4dc0-ae87-902279a21f4d",
+          "x-WM-UUID" : "e46c724d-191e-428e-9239-a81ff5fda669",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "page",
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -3920,7 +3841,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -3942,14 +3863,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "a371be2e-202b-4ebf-8f54-5cc6c50398ca",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "executeSalesRevenueAndCount"
+        "x-WM-OPERATION_UID" : "9ee15292-cb80-4fc5-ac4f-6fcbbf1db9f8",
+        "x-WM-METHOD_NAME" : "executeSalesRevenueAndCount",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
       "x-WM-TAG" : "QueryExecutionController",
-      "x-WM-RELATIVE_PATH" : "/queries/salesRevenueAndCount",
-      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/salesRevenueAndCount"
+      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
+      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/salesRevenueAndCount",
+      "x-WM-RELATIVE_PATH" : "/queries/salesRevenueAndCount"
     },
     "/salesdb/queryExecutor/queries/topTrendingProducts" : {
       "get" : {
@@ -3959,29 +3880,26 @@
         "parameters" : [ {
           "name" : "year",
           "in" : "query",
-          "required" : false,
+          "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "1044c759-9276-4804-b98f-cba944a3822a",
+          "x-WM-UUID" : "a953f3c6-d8f4-426f-aca7-a3a455ac92f1",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "month",
           "in" : "query",
-          "required" : false,
+          "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "1ddf0025-e9e8-409a-a713-17ddad2a2de6",
+          "x-WM-UUID" : "ae878b66-4853-4baf-8377-2d3cedac70d1",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "page",
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -3990,7 +3908,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -4012,14 +3930,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "cc47d5b3-f7ca-4dac-a3c0-362a00ba1544",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "executeTopTrendingProducts"
+        "x-WM-OPERATION_UID" : "1d8408fe-6f6c-4dbc-a551-73d4371afe83",
+        "x-WM-METHOD_NAME" : "executeTopTrendingProducts",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
       "x-WM-TAG" : "QueryExecutionController",
-      "x-WM-RELATIVE_PATH" : "/queries/topTrendingProducts",
-      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/topTrendingProducts"
+      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
+      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/topTrendingProducts",
+      "x-WM-RELATIVE_PATH" : "/queries/topTrendingProducts"
     },
     "/salesdb/queryExecutor/queries/weeklyConverted" : {
       "get" : {
@@ -4029,29 +3947,26 @@
         "parameters" : [ {
           "name" : "year",
           "in" : "query",
-          "required" : false,
+          "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "f6b3dc0b-a885-4f0b-9484-10d2f474e6a1",
+          "x-WM-UUID" : "245a6437-633d-44c1-b05b-f0a49b8e5123",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "month",
           "in" : "query",
-          "required" : false,
+          "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "5d9be2e7-4a8c-456e-b6ad-72be986eea95",
+          "x-WM-UUID" : "56a7d1bc-8f53-433f-831b-ee810becd43a",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "page",
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -4060,7 +3975,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -4082,14 +3997,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "76091e68-825d-49b9-ae81-9164c7ba48a9",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "executeWeeklyConverted"
+        "x-WM-OPERATION_UID" : "c5fe57e7-c294-4f6b-a173-89f72c46e8ba",
+        "x-WM-METHOD_NAME" : "executeWeeklyConverted",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
       "x-WM-TAG" : "QueryExecutionController",
-      "x-WM-RELATIVE_PATH" : "/queries/weeklyConverted",
-      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/weeklyConverted"
+      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
+      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/weeklyConverted",
+      "x-WM-RELATIVE_PATH" : "/queries/weeklyConverted"
     },
     "/salesdb/queryExecutor/queries/weeklyFollowUps" : {
       "get" : {
@@ -4099,29 +4014,26 @@
         "parameters" : [ {
           "name" : "year",
           "in" : "query",
-          "required" : false,
+          "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "4a96aeb0-8400-4ceb-a185-7ef6cd754c4b",
+          "x-WM-UUID" : "55711150-83f6-41e3-a0ec-ca97835bf4b5",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "month",
           "in" : "query",
-          "required" : false,
+          "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "f41f43c4-03d5-4e75-8c13-70342b72b830",
+          "x-WM-UUID" : "5d418f2c-a376-4ad1-ac72-4c408188153f",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "page",
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -4130,7 +4042,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -4152,14 +4064,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "93aa1723-acfa-4231-809c-6006caba830b",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "executeWeeklyFollowUps"
+        "x-WM-OPERATION_UID" : "26a5a5a7-61cf-407b-adf3-16e235842634",
+        "x-WM-METHOD_NAME" : "executeWeeklyFollowUps",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
       "x-WM-TAG" : "QueryExecutionController",
-      "x-WM-RELATIVE_PATH" : "/queries/weeklyFollowUps",
-      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/weeklyFollowUps"
+      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
+      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/weeklyFollowUps",
+      "x-WM-RELATIVE_PATH" : "/queries/weeklyFollowUps"
     },
     "/salesdb/queryExecutor/queries/weeklyLeads" : {
       "get" : {
@@ -4169,29 +4081,26 @@
         "parameters" : [ {
           "name" : "year",
           "in" : "query",
-          "required" : false,
+          "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "5db17c24-2a65-49db-9cc8-ce2fa3e4518f",
+          "x-WM-UUID" : "520b1b94-4470-4a6b-8648-e6f3c304e67b",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "month",
           "in" : "query",
-          "required" : false,
+          "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "865bbf70-f188-4acb-8bbd-033f979e2b45",
+          "x-WM-UUID" : "0987fe15-fd0f-4f2e-a44c-4862e401c4cc",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "page",
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -4200,7 +4109,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -4222,14 +4131,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "1f7d5720-003c-4856-92fd-437e6406371e",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "executeWeeklyLeads"
+        "x-WM-OPERATION_UID" : "a13d2997-78f7-4eef-9dfb-f13b7fe1ca45",
+        "x-WM-METHOD_NAME" : "executeWeeklyLeads",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
       "x-WM-TAG" : "QueryExecutionController",
-      "x-WM-RELATIVE_PATH" : "/queries/weeklyLeads",
-      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/weeklyLeads"
+      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
+      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/weeklyLeads",
+      "x-WM-RELATIVE_PATH" : "/queries/weeklyLeads"
     },
     "/salesdb/queryExecutor/queries/weeklyQuotes" : {
       "get" : {
@@ -4239,29 +4148,26 @@
         "parameters" : [ {
           "name" : "year",
           "in" : "query",
-          "required" : false,
+          "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "1fd937f4-113d-45ff-a300-a93adb1e8c13",
+          "x-WM-UUID" : "4369e50f-6782-4a3e-8933-fa5673b97eac",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "month",
           "in" : "query",
-          "required" : false,
+          "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "ea261b25-ef1d-4563-96b5-c102ba85c4e8",
+          "x-WM-UUID" : "5d2215b2-7e2e-4763-9677-4b40d1e9399b",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "page",
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -4270,7 +4176,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -4292,14 +4198,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "0e86162b-cc3d-4fb3-b553-3ac88c7c987d",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "executeWeeklyQuotes"
+        "x-WM-OPERATION_UID" : "e3f09f52-5d71-4abb-864a-75f963639aaf",
+        "x-WM-METHOD_NAME" : "executeWeeklyQuotes",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
       "x-WM-TAG" : "QueryExecutionController",
-      "x-WM-RELATIVE_PATH" : "/queries/weeklyQuotes",
-      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/weeklyQuotes"
+      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
+      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/weeklyQuotes",
+      "x-WM-RELATIVE_PATH" : "/queries/weeklyQuotes"
     },
     "/salesdb/queryExecutor/queries/weeklySales" : {
       "get" : {
@@ -4309,29 +4215,26 @@
         "parameters" : [ {
           "name" : "year",
           "in" : "query",
-          "required" : false,
+          "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "ba63db34-a9a1-443a-bd45-c4643ce1a550",
+          "x-WM-UUID" : "edd6ae57-32b5-4c89-8f97-3d18bdec6372",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "month",
           "in" : "query",
-          "required" : false,
+          "required" : true,
           "type" : "integer",
-          "collectionFormat" : "multi",
           "format" : "int32",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
-          "x-WM-UUID" : "3aa5f467-05ab-46c1-a417-44598b7cbd36",
+          "x-WM-UUID" : "6f724ce9-b607-4a7e-8cc3-4ba4fb55a3b9",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "page",
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -4340,7 +4243,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -4362,14 +4265,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "0e554399-5ecc-459e-8912-1dc61fcce2d5",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "executeWeeklySales"
+        "x-WM-OPERATION_UID" : "1ff51fd3-695d-426c-bab0-cf086b684855",
+        "x-WM-METHOD_NAME" : "executeWeeklySales",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
       "x-WM-TAG" : "QueryExecutionController",
-      "x-WM-RELATIVE_PATH" : "/queries/weeklySales",
-      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/weeklySales"
+      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
+      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/weeklySales",
+      "x-WM-RELATIVE_PATH" : "/queries/weeklySales"
     },
     "/salesdb/queryExecutor/queries/wm_custom" : {
       "post" : {
@@ -4385,14 +4288,13 @@
             "x-WM-TYPE_ARGUMENTS" : [ ]
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.model.CustomQuery",
-          "x-WM-UUID" : "6b121d63-8a4e-4dfe-96a3-a9747a8ad70a",
+          "x-WM-UUID" : "57ecadee-46e1-41ef-9dd6-c60a2fe05989",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "page",
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "0",
           "format" : "int32",
           "x-WM-EDITABLE" : false,
           "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
@@ -4401,7 +4303,7 @@
           "in" : "query",
           "required" : false,
           "type" : "integer",
-          "default" : "20",
+          "default" : 20,
           "format" : "int32",
           "x-WM-EDITABLE" : false
         }, {
@@ -4423,14 +4325,14 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "8c89cbc9-5430-46dc-a281-02d9bae4f720",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "executeWMCustomQuery"
+        "x-WM-OPERATION_UID" : "ec1a60d1-86ae-4a2a-b37f-894270c8392c",
+        "x-WM-METHOD_NAME" : "executeWMCustomQuery",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
       "x-WM-TAG" : "QueryExecutionController",
-      "x-WM-RELATIVE_PATH" : "/queries/wm_custom",
-      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/wm_custom"
+      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
+      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/wm_custom",
+      "x-WM-RELATIVE_PATH" : "/queries/wm_custom"
     },
     "/salesdb/queryExecutor/queries/wm_custom_update" : {
       "post" : {
@@ -4446,7 +4348,7 @@
             "x-WM-TYPE_ARGUMENTS" : [ ]
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.model.CustomQuery",
-          "x-WM-UUID" : "57bd0b79-cd31-42c7-8e18-52bad9a631e6",
+          "x-WM-UUID" : "0879011c-15f1-46ec-8ffc-01f94f9097e9",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -4458,37 +4360,17 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "a4d1fa68-1689-4d5d-a1cf-c096104a0bc2",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "executeWMCustomQuery"
+        "x-WM-OPERATION_UID" : "68a132dd-c335-4e1e-9e3b-2ff7769007c0",
+        "x-WM-METHOD_NAME" : "executeWMCustomQuery",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
-      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
       "x-WM-TAG" : "QueryExecutionController",
-      "x-WM-RELATIVE_PATH" : "/queries/wm_custom_update",
-      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/wm_custom_update"
+      "x-WM-BASE_PATH" : "/salesdb/queryExecutor",
+      "x-WM-COMPLETE_PATH" : "/salesdb/queryExecutor/queries/wm_custom_update",
+      "x-WM-RELATIVE_PATH" : "/queries/wm_custom_update"
     }
   },
   "definitions" : {
-    "Sort" : {
-      "allOf" : [ {
-        "$ref" : "#/definitions/Iterable"
-      }, {
-        "$ref" : "#/definitions/Serializable"
-      }, {
-        "properties" : {
-          "orders" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Sort$Order",
-              "x-WM-TYPE_ARGUMENTS" : [ ]
-            },
-            "x-WM-IS_LIST" : true
-          }
-        }
-      } ],
-      "x-WM-FULLY_QUALIFIED_NAME" : "org.springframework.data.domain.Sort",
-      "x-WM-TAGS" : [ "ChannelsController" ]
-    },
     "Sales" : {
       "allOf" : [ {
         "$ref" : "#/definitions/Serializable"
@@ -4520,7 +4402,28 @@
         }
       } ],
       "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.Sales",
-      "x-WM-TAGS" : [ "ChannelsController", "SalesController", "QuotesController", "ProductsController" ]
+      "x-WM-TAGS" : [ "RepsController", "SalesController", "QuotesController", "ProductsController" ]
+    },
+    "Sort" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/Iterable"
+      }, {
+        "$ref" : "#/definitions/Serializable"
+      }, {
+        "properties" : {
+          "orders" : {
+            "type" : "array",
+            "uniqueItems" : false,
+            "items" : {
+              "$ref" : "#/definitions/Sort$Order",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : true
+          }
+        }
+      } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "org.springframework.data.domain.Sort",
+      "x-WM-TAGS" : [ "RepsController" ]
     },
     "Customers" : {
       "allOf" : [ {
@@ -4550,7 +4453,7 @@
         }
       } ],
       "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.Customers",
-      "x-WM-TAGS" : [ "ChannelsController", "CustomersController", "StatesController" ]
+      "x-WM-TAGS" : [ "RepsController", "CustomersController", "StatesController" ]
     },
     "CustomQueryParam" : {
       "properties" : {
@@ -4595,7 +4498,7 @@
         }
       } ],
       "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.Products",
-      "x-WM-TAGS" : [ "ChannelsController", "ProductsController" ]
+      "x-WM-TAGS" : [ "RepsController", "ProductsController" ]
     },
     "FollowUps" : {
       "allOf" : [ {
@@ -4617,17 +4520,17 @@
         }
       } ],
       "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.FollowUps",
-      "x-WM-TAGS" : [ "ChannelsController", "FollowUpsController", "QuotesController" ]
+      "x-WM-TAGS" : [ "RepsController", "FollowUpsController", "QuotesController" ]
     },
     "QueryFilter" : {
       "properties" : {
         "attributeType" : {
           "type" : "string",
-          "enum" : [ "BIG_DECIMAL", "BIG_INTEGER", "BLOB", "BOOLEAN", "BYTE", "CALENDAR", "CALENDAR_DATE", "CHARACTER", "CLOB", "CURRENCY", "DATE", "DOUBLE", "FLOAT", "INTEGER", "LOCALE", "STRING", "SHORT", "TEXT", "TIME", "DATETIME", "TIMESTAMP", "TIMEZONE", "TRUE_FALSE", "YES_NO" ]
+          "enum" : [ "BIG_DECIMAL", "BIG_INTEGER", "BLOB", "BOOLEAN", "BYTE", "CALENDAR", "CALENDAR_DATE", "CHARACTER", "CLOB", "CURRENCY", "DATE", "DOUBLE", "FLOAT", "INTEGER", "LONG", "LOCALE", "STRING", "SHORT", "TEXT", "TIME", "DATETIME", "TIMESTAMP", "TIMEZONE", "TRUE_FALSE", "YES_NO" ]
         },
         "filterCondition" : {
           "type" : "string",
-          "enum" : [ "STARTING_WITH", "ENDING_WITH", "CONTAINING", "EQUALS" ]
+          "enum" : [ "STARTING_WITH", "ENDING_WITH", "CONTAINING", "EQUALS", "NOT_EQUALS", "BETWEEN", "LESS_THAN", "LESS_THAN_OR_EQUALS", "GREATER_THAN", "GREATER_THAN_OR_EQUALS", "NULL", "EMPTY", "NULL_OR_EMPTY" ]
         },
         "attributeValue" : {
           "$ref" : "#/definitions/Object",
@@ -4638,7 +4541,7 @@
         }
       },
       "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.runtime.data.expression.QueryFilter",
-      "x-WM-TAGS" : [ "ChannelsController", "RepsController", "SalesController", "FollowUpsController", "CustomersController", "TasksController", "StatesController", "LeadsController", "QuotesController", "ProductsController" ]
+      "x-WM-TAGS" : [ "RepsController", "SalesController", "FollowUpsController", "TasksController", "CustomersController", "LeadsController", "QuotesController", "ChannelsController", "ProductsController", "StatesController" ]
     },
     "Sort$Order" : {
       "allOf" : [ {
@@ -4662,7 +4565,7 @@
         }
       } ],
       "x-WM-FULLY_QUALIFIED_NAME" : "org.springframework.data.domain.Sort.Order",
-      "x-WM-TAGS" : [ "ChannelsController" ]
+      "x-WM-TAGS" : [ "RepsController" ]
     },
     "Tasks" : {
       "allOf" : [ {
@@ -4690,7 +4593,7 @@
         }
       } ],
       "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.Tasks",
-      "x-WM-TAGS" : [ "ChannelsController", "RepsController", "TasksController" ]
+      "x-WM-TAGS" : [ "RepsController", "TasksController" ]
     },
     "Quotes" : {
       "allOf" : [ {
@@ -4738,7 +4641,7 @@
         }
       } ],
       "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.Quotes",
-      "x-WM-TAGS" : [ "ChannelsController", "RepsController", "LeadsController", "QuotesController" ]
+      "x-WM-TAGS" : [ "RepsController", "LeadsController", "QuotesController" ]
     },
     "CustomProcedureParam" : {
       "properties" : {
@@ -4787,7 +4690,7 @@
         }
       } ],
       "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.States",
-      "x-WM-TAGS" : [ "ChannelsController", "StatesController" ]
+      "x-WM-TAGS" : [ "RepsController", "StatesController" ]
     },
     "Slice" : {
       "allOf" : [ {
@@ -4815,6 +4718,7 @@
           },
           "content" : {
             "type" : "array",
+            "uniqueItems" : false,
             "items" : {
               "$ref" : "#/definitions/Object",
               "x-WM-TYPE_ARGUMENTS" : [ ]
@@ -4827,7 +4731,7 @@
         }
       } ],
       "x-WM-FULLY_QUALIFIED_NAME" : "org.springframework.data.domain.Slice",
-      "x-WM-TAGS" : [ "ChannelsController" ]
+      "x-WM-TAGS" : [ "RepsController" ]
     },
     "Channels" : {
       "allOf" : [ {
@@ -4853,11 +4757,10 @@
         }
       } ],
       "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.Channels",
-      "x-WM-TAGS" : [ "ChannelsController" ]
+      "x-WM-TAGS" : [ "RepsController", "ChannelsController" ]
     },
     "Iterable" : {
-      "x-WM-FULLY_QUALIFIED_NAME" : "java.lang.Iterable",
-      "x-WM-TAGS" : [ "ChannelsController" ]
+      "x-WM-TAGS" : [ "RepsController" ]
     },
     "CustomProcedure" : {
       "properties" : {
@@ -4890,9 +4793,6 @@
             "type" : "integer",
             "format" : "int32"
           },
-          "firstPage" : {
-            "type" : "boolean"
-          },
           "totalPages" : {
             "type" : "integer",
             "format" : "int32"
@@ -4914,6 +4814,7 @@
           },
           "content" : {
             "type" : "array",
+            "uniqueItems" : false,
             "items" : {
               "$ref" : "#/definitions/Object",
               "x-WM-TYPE_ARGUMENTS" : [ ]
@@ -4922,14 +4823,11 @@
           },
           "last" : {
             "type" : "boolean"
-          },
-          "lastPage" : {
-            "type" : "boolean"
           }
         }
       } ],
       "x-WM-FULLY_QUALIFIED_NAME" : "org.springframework.data.domain.Page",
-      "x-WM-TAGS" : [ "ChannelsController", "RepsController", "SalesController", "QueryExecutionController", "FollowUpsController", "CustomersController", "TasksController", "StatesController", "LeadsController", "QuotesController", "ProductsController" ]
+      "x-WM-TAGS" : [ "RepsController", "SalesController", "FollowUpsController", "TasksController", "CustomersController", "LeadsController", "QuotesController", "ChannelsController", "ProductsController", "QueryExecutionController", "StatesController" ]
     },
     "Leads" : {
       "allOf" : [ {
@@ -4960,11 +4858,11 @@
         }
       } ],
       "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.Leads",
-      "x-WM-TAGS" : [ "ChannelsController", "CustomersController", "LeadsController" ]
+      "x-WM-TAGS" : [ "RepsController", "CustomersController", "LeadsController" ]
     },
     "Serializable" : {
       "x-WM-FULLY_QUALIFIED_NAME" : "java.io.Serializable",
-      "x-WM-TAGS" : [ "ChannelsController" ]
+      "x-WM-TAGS" : [ "RepsController" ]
     },
     "CustomQuery" : {
       "properties" : {
@@ -4976,6 +4874,7 @@
         },
         "queryParams" : {
           "type" : "array",
+          "uniqueItems" : false,
           "items" : {
             "$ref" : "#/definitions/CustomQueryParam",
             "x-WM-TYPE_ARGUMENTS" : [ ]
@@ -5044,7 +4943,10 @@
         }
       } ],
       "x-WM-FULLY_QUALIFIED_NAME" : "com.salesdb.Reps",
-      "x-WM-TAGS" : [ "ChannelsController", "RepsController" ]
+      "x-WM-TAGS" : [ "RepsController", "ChannelsController" ]
+    },
+    "Object" : {
+      "x-WM-TAGS" : [ "RepsController", "ProcedureExecutionController", "QueryExecutionController" ]
     }
   }
 }

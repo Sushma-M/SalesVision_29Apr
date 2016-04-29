@@ -11,9 +11,10 @@
   "tags" : [ {
     "name" : "FileController",
     "x-WM-FULLY_QUALIFIED_NAME" : "com.salesvision2_0.fileservice.controller.FileController",
+    "x-WM-CONTROLLER_NAME" : "File",
     "x-WM-VERSION" : ""
   } ],
-  "schemes" : [ "http", "https" ],
+  "schemes" : [ "https", "http" ],
   "paths" : {
     "/file/downloadFile" : {
       "get" : {
@@ -25,18 +26,16 @@
           "in" : "query",
           "required" : false,
           "type" : "string",
-          "collectionFormat" : "multi",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
-          "x-WM-UUID" : "f5e751a5-a99e-4272-a844-5406e6d4a4ff",
+          "x-WM-UUID" : "ee1e7358-6ea5-4fd3-9398-ef0ceaad95ad",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "returnName",
           "in" : "query",
           "required" : false,
           "type" : "string",
-          "collectionFormat" : "multi",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
-          "x-WM-UUID" : "cdd1ff01-dec7-4de2-b34e-1ea3ae6e1334",
+          "x-WM-UUID" : "fff21017-0b9c-400b-bbd2-282b4b685ada",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -48,9 +47,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "074ba393-85af-4a53-8397-5dd8e585fcff",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "getDownloadFile"
+        "x-WM-OPERATION_UID" : "aa725042-c2c1-462b-b0a9-ede62370658b",
+        "x-WM-METHOD_NAME" : "getDownloadFile",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "x-WM-TAG" : "FileController",
       "x-WM-BASE_PATH" : "/file",
@@ -67,18 +66,16 @@
           "in" : "query",
           "required" : false,
           "type" : "string",
-          "collectionFormat" : "multi",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
-          "x-WM-UUID" : "729010a8-78cd-4c53-9248-ba5603837f9b",
+          "x-WM-UUID" : "7fecb8ea-c5fd-43ee-a7b6-d0f3c250c7fb",
           "x-WM-EDITABLE" : true
         }, {
           "name" : "returnName",
           "in" : "query",
           "required" : false,
           "type" : "string",
-          "collectionFormat" : "multi",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
-          "x-WM-UUID" : "925ab82d-8018-4477-900d-66cb01bf6466",
+          "x-WM-UUID" : "5ee144de-fb2c-4845-9bad-0d602ab01fae",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -90,9 +87,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "4bb0cd15-d133-4fe4-ba14-6ecec644216e",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "getDownloadFileAsInline"
+        "x-WM-OPERATION_UID" : "2738e09f-e019-42b3-8913-e9559f35148b",
+        "x-WM-METHOD_NAME" : "getDownloadFileAsInline",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "x-WM-TAG" : "FileController",
       "x-WM-BASE_PATH" : "/file",
@@ -108,9 +105,8 @@
           "in" : "query",
           "required" : false,
           "type" : "string",
-          "collectionFormat" : "multi",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
-          "x-WM-UUID" : "1f09369f-94b6-430e-824b-16c2d061fbc4",
+          "x-WM-UUID" : "3f60c30c-5f13-4b21-82e3-437966bcfe1d",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -121,9 +117,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "80e44a2d-c5a7-49bf-b735-2d961d170d0c",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "deleteFile"
+        "x-WM-OPERATION_UID" : "fc5eacd6-1783-40c6-8845-c1bce400f8cb",
+        "x-WM-METHOD_NAME" : "deleteFile",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "x-WM-TAG" : "FileController",
       "x-WM-BASE_PATH" : "/file",
@@ -147,9 +143,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "6ceb1ba2-b3f6-42da-a7fc-f12207de852e",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "listFiles"
+        "x-WM-OPERATION_UID" : "ddbccb28-beea-4f79-8d35-97788225c6d8",
+        "x-WM-METHOD_NAME" : "listFiles",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "x-WM-TAG" : "FileController",
       "x-WM-BASE_PATH" : "/file",
@@ -171,7 +167,7 @@
           },
           "collectionFormat" : "multi",
           "x-WM-FULLY_QUALIFIED_TYPE" : "org.springframework.web.multipart.MultipartFile",
-          "x-WM-UUID" : "f51667ea-5b43-4d70-bc8b-a54001dcf61b",
+          "x-WM-UUID" : "266e4af1-eeea-4db0-bb16-2fee0ea07b66",
           "x-WM-EDITABLE" : true,
           "x-WM-RESOLVER" : "[Lorg.springframework.web.multipart.MultipartFile;"
         }, {
@@ -179,9 +175,8 @@
           "in" : "query",
           "required" : false,
           "type" : "string",
-          "collectionFormat" : "multi",
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
-          "x-WM-UUID" : "099b85e9-7bb3-4589-9138-50945a523792",
+          "x-WM-UUID" : "ca2bb675-64c3-46ce-95f7-6bb15ea7a8a6",
           "x-WM-EDITABLE" : true
         } ],
         "responses" : {
@@ -197,9 +192,9 @@
             }
           }
         },
-        "x-WM-OPERATION_UID" : "9fdb1f71-5933-46aa-9daf-17f323eaea89",
-        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
-        "x-WM-METHOD_NAME" : "uploadFile"
+        "x-WM-OPERATION_UID" : "49801db8-4530-4c0a-a79a-bc0773ccaf3a",
+        "x-WM-METHOD_NAME" : "uploadFile",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
       "x-WM-TAG" : "FileController",
       "x-WM-BASE_PATH" : "/file",
@@ -231,11 +226,11 @@
               "format" : "byte"
             }
           },
-          "contentType" : {
-            "type" : "string"
-          },
           "empty" : {
             "type" : "boolean"
+          },
+          "contentType" : {
+            "type" : "string"
           },
           "inputStream" : {
             "$ref" : "#/definitions/InputStream",
@@ -252,11 +247,11 @@
           "$ref" : "#/definitions/InputStream",
           "x-WM-TYPE_ARGUMENTS" : [ ]
         },
-        "inline" : {
-          "type" : "boolean"
-        },
         "fileName" : {
           "type" : "string"
+        },
+        "inline" : {
+          "type" : "boolean"
         },
         "contentLength" : {
           "type" : "integer",
@@ -333,7 +328,6 @@
       "x-WM-TAGS" : [ "FileController" ]
     },
     "AutoCloseable" : {
-      "x-WM-FULLY_QUALIFIED_NAME" : "java.lang.AutoCloseable",
       "x-WM-TAGS" : [ "FileController" ]
     },
     "FileServiceManager" : {

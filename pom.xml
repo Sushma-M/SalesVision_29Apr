@@ -152,6 +152,31 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.10</version>
+                <executions>
+                    <execution>
+                        <id>unpack-wmapp-artifact</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${basedir}/src/main/webapp/wmapp</outputDirectory>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.wavemaker.studio</groupId>
+                                    <artifactId>wavemaker-app-runtime</artifactId>
+                                    <version>${wavemaker.studio.version}</version>
+                                    <classifier>wmapp</classifier>
+                                    <type>zip</type>
+                </artifactItem>
+              </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
     <profiles>
@@ -215,6 +240,11 @@
             <version>2.5</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>2.3.3</version>
+        </dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>
@@ -235,9 +265,9 @@
         </dependencies>
     </dependencyManagement>
     <properties>
-        <spring.version>{{spring.version}}</spring.version>
         <profile.props.file>development.properties</profile.props.file>
-        <spring.security.version>{{spring.security.version}}</spring.security.version>
-        <wavemaker.studio.version>{{wavemaker.studio.version}}</wavemaker.studio.version>
+        <spring.version>4.2.0.RELEASE</spring.version>
+        <spring.security.version>3.2.3.RELEASE</spring.security.version>
+        <wavemaker.studio.version>8.1.2</wavemaker.studio.version>
     </properties>
 </project>

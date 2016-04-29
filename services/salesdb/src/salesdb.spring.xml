@@ -11,7 +11,7 @@
         </property>
         <property name="ignoreUnresolvablePlaceholders" value="true"/>
     </bean>
-    <bean class="com.mchange.v2.c3p0.ComboPooledDataSource" lazy-init="true" depends-on="systemPropertyInitializer" destroy-method="close" id="salesdbWMManagedDataSource" p:unreturnedConnectionTimeout="300" p:password="${salesdb.password}" p:contextClassLoaderSource="library" p:maxIdleTime="600" p:privilegeSpawnedThreads="true" p:debugUnreturnedConnectionStackTraces="true" p:acquireRetryAttempts="3" p:acquireRetryDelay="1000" p:jdbcUrl="${salesdb.url}" p:user="${salesdb.username}" p:driverClass="${salesdb.driverClass}" p:idleConnectionTestPeriod="300" p:maxPoolSize="4" p:minPoolSize="2" xmlns:p="http://www.springframework.org/schema/p"/>
+    <bean class="com.mchange.v2.c3p0.ComboPooledDataSource" lazy-init="true" depends-on="systemPropertyInitializer" destroy-method="close" id="salesdbWMManagedDataSource" p:unreturnedConnectionTimeout="300" p:password="${salesdb.password}" p:contextClassLoaderSource="library" p:maxIdleTime="600" p:privilegeSpawnedThreads="true" p:debugUnreturnedConnectionStackTraces="true" p:acquireRetryAttempts="3" p:acquireRetryDelay="1000" p:jdbcUrl="${salesdb.url}" p:user="${salesdb.username}" p:driverClass="${salesdb.driverClass}" p:maxPoolSize="4" p:idleConnectionTestPeriod="300" p:minPoolSize="2" xmlns:p="http://www.springframework.org/schema/p"/>
     <bean class="org.springframework.orm.hibernate4.LocalSessionFactoryBean" id="salesdbSessionFactory">
         <property name="dataSource" ref="salesdbDataSource"/>
         <property name="packagesToScan" value="com.salesdb"/>
@@ -36,6 +36,7 @@
                 <prop key="hibernate.globally_quoted_identifiers">
                 false
                 </prop>
+                <prop key="hibernate.temp.use_jdbc_metadata_defaults">false</prop>
             </props>
         </property>
     </bean>

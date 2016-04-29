@@ -1,1 +1,10 @@
-var _WM_APP_PROPERTIES = {"name":"SalesVision","version":"1.0","defaultLanguage":"en","type":"APPLICATION","homePage":"Main","platformType":"WEB","activeTheme":"flyer"}
+var _WM_APP_PROPERTIES = {
+  "activeTheme" : "flyer",
+  "defaultLanguage" : "en",
+  "displayName" : "SalesVision",
+  "homePage" : "Main",
+  "name" : "SalesVision",
+  "platformType" : "WEB",
+  "type" : "APPLICATION",
+  "version" : "1.0"
+};

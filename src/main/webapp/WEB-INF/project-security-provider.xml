@@ -2,6 +2,9 @@
 <beans xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd" xmlns="http://www.springframework.org/schema/beans" xmlns:security="http://www.springframework.org/schema/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <security:global-method-security pre-post-annotations="enabled" authentication-manager-ref="authenticationManager"/>
     <security:http pattern="/app.variables.json" security="none"/>
+    <security:http pattern="/print.css" security="none"/>
+    <security:http pattern="/favicon.ico" security="none"/>
+    <security:http pattern="/app/prefabs/**" security="none"/>
     <security:http pattern="/app.css" security="none"/>
     <security:http pattern="/index.html" security="none"/>
     <security:http pattern="/config.js" security="none"/>
@@ -101,11 +104,11 @@
             </bean>
         </property>
     </bean>
-    <security:authentication-manager id="authenticationManager" alias="authenticationManagerDemo">
-        <security:authentication-provider user-service-ref="demoAuthentication"/>
+    <security:authentication-manager id="authenticationManager">
+        <security:authentication-provider ref="demoAuthenticationProvider"/>
         <security:authentication-provider ref="rememberMeAuthenticationProvider"/>
     </security:authentication-manager>
-    <bean class="com.wavemaker.runtime.security.DemoUserDetailsManager" id="demoAuthentication">
+    <bean class="com.wavemaker.runtime.security.DemoUserDetailsManager" id="demoUserDetailsService">
         <property name="users">
             <list>
                 <bean class="com.wavemaker.runtime.security.WMUser">
@@ -168,5 +171,8 @@
     </bean>
     <bean class="org.springframework.security.authentication.RememberMeAuthenticationProvider" id="rememberMeAuthenticationProvider">
         <property name="key" value="WM_APP_KEY"/>
+    </bean>
+    <bean class="org.springframework.security.authentication.dao.DaoAuthenticationProvider" id="demoAuthenticationProvider">
+        <property name="userDetailsService" ref="demoUserDetailsService"/>
     </bean>
 </beans>
